@@ -281,7 +281,7 @@ export const en: Dictionary = {
       {
         h: "Processors",
         p: [
-          "The site is hosted on Vercel. Form requests are delivered through an email service (TODO: Resend or Formspree). These providers process data only on my instructions.",
+          "The site is hosted on GitHub Pages (GitHub, Inc.), which logs visitors' IP addresses for security purposes. Form requests are delivered through an email service (TODO: Resend or Formspree). These providers process data only on my instructions.",
         ],
       },
       {

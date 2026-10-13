@@ -283,7 +283,7 @@ export const et = {
       {
         h: "Volitatud töötlejad",
         p: [
-          "Leht on majutatud Vercelis. Vormi päringud edastatakse e-posti teenuse kaudu (TODO: Resend või Formspree). Teenusepakkujad töötlevad andmeid ainult minu juhiste alusel.",
+          "Leht on majutatud GitHub Pages teenuses (GitHub, Inc.), mis salvestab turvalisuse eesmärgil külastajate IP-aadressid. Vormi päringud edastatakse e-posti teenuse kaudu (TODO: Resend või Formspree). Teenusepakkujad töötlevad andmeid ainult minu juhiste alusel.",
         ],
       },
       {
