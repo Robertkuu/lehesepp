@@ -23,7 +23,7 @@ npm run dev
 
 - [x] Real email and phone in `src/lib/site.ts`
 - [x] Quote form sends through Formspree (`src/lib/submitQuote.ts`)
-- [ ] Formspree form ID in `formspreeId` in `src/lib/site.ts`
+- [x] Formspree form ID in `formspreeId` in `src/lib/site.ts`
 - [x] Name the form provider in the privacy policy (both dictionaries)
 - [x] Robert's photo in `src/components/sections/About.tsx`
 - [x] Production domain https://lehesepp.ee (override with `NEXT_PUBLIC_SITE_URL`)
