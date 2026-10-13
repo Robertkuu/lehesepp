@@ -5,7 +5,7 @@ export const dynamic = "force-static";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    // Prospect previews are kept out of search with noindex (meta + header), not robots.txt,
+    // Prospect previews are kept out of search with a noindex meta tag (GitHub Pages cannot send headers), not robots.txt,
     // so crawlers can actually see the noindex.
     rules: { userAgent: "*", allow: "/" },
     sitemap: `${siteUrl}/sitemap.xml`,

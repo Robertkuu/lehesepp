@@ -34,9 +34,17 @@ export function saveConsent(consent: Consent) {
 }
 
 let loaded = false;
+// The visitor's current choice in this tab; a later "reject" must stop conversions too.
+let granted = false;
 
 export function loadAds() {
-  if (loaded || !adsEnabled) return;
+  if (!adsEnabled) return;
+  granted = true;
+  if (loaded) {
+    // Accepted again after a reject in the same tab: the tag is already on the page.
+    window.gtag?.("consent", "update", { ad_storage: "granted", ad_user_data: "granted" });
+    return;
+  }
   loaded = true;
   window.dataLayer = window.dataLayer || [];
   window.gtag = function gtag() {
@@ -54,6 +62,7 @@ export function loadAds() {
 }
 
 function revokeAds() {
+  granted = false;
   window.gtag?.("consent", "update", { ad_storage: "denied", ad_user_data: "denied" });
   // Remove the Google Ads cookies already set on this domain.
   for (const c of document.cookie.split(";")) {
@@ -64,6 +73,6 @@ function revokeAds() {
 
 /** Counts a sent quote request as a Google Ads conversion (no-op without consent). */
 export function trackLead() {
-  if (!loaded || !site.googleAds.conversionLabel) return;
+  if (!granted || !site.googleAds.conversionLabel) return;
   window.gtag?.("event", "conversion", { send_to: `${site.googleAds.id}/${site.googleAds.conversionLabel}` });
 }

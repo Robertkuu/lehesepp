@@ -5,11 +5,9 @@ import { industries, industryPath } from "@/content/industries";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
   const pages: MetadataRoute.Sitemap = (Object.keys(routes) as (keyof typeof routes)[]).flatMap((key) =>
     (["et", "en"] as const).map((locale) => ({
       url: absoluteUrl(routes[key][locale]),
-      lastModified,
       changeFrequency: "monthly" as const,
       priority: key === "home" ? 1 : 0.3,
       alternates: {
@@ -24,7 +22,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Estonian-only industry pages.
   const industryPages: MetadataRoute.Sitemap = industries.map((i) => ({
     url: absoluteUrl(industryPath(i.slug)),
-    lastModified,
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
