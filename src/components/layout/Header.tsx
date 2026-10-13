@@ -4,7 +4,19 @@ import { routes, otherLocale, type Locale } from "@/i18n/config";
 import { Logo } from "@/components/Logo";
 import { ButtonLink } from "@/components/ui/Button";
 
-export function Header({ locale, dict, route = "home" }: { locale: Locale; dict: Dictionary; route?: keyof typeof routes }) {
+/** route: the page's key in `routes`, or null for a page without a translation (e.g. industry pages).
+ *  localContact: the page has its own #kontakt section. */
+export function Header({
+  locale,
+  dict,
+  route = "home",
+  localContact = false,
+}: {
+  locale: Locale;
+  dict: Dictionary;
+  route?: keyof typeof routes | null;
+  localContact?: boolean;
+}) {
   const home = routes.home[locale];
   const anchor = (id: string) => (route === "home" ? `#${id}` : `${home}#${id}`);
   const links = [
@@ -37,7 +49,7 @@ export function Header({ locale, dict, route = "home" }: { locale: Locale; dict:
             ))}
           </ul>
           <Link
-            href={routes[route][other]}
+            href={routes[route ?? "home"][other]}
             hrefLang={other}
             lang={other}
             className="press flex h-10 min-w-10 items-center justify-center rounded-[var(--radius-frame)] px-2 text-sm font-semibold text-ink-2 transition-colors duration-150 hover:bg-paper-2 hover:text-ink"
@@ -45,7 +57,7 @@ export function Header({ locale, dict, route = "home" }: { locale: Locale; dict:
             <span>{dict.nav.languageShort}</span>
             <span className="sr-only">, {dict.nav.language}</span>
           </Link>
-          <ButtonLink href={anchor("kontakt")} size="sm">
+          <ButtonLink href={localContact ? "#kontakt" : anchor("kontakt")} size="sm">
             {dict.nav.cta}
           </ButtonLink>
         </nav>

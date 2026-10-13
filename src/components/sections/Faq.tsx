@@ -1,7 +1,9 @@
 import { PlusIcon } from "@phosphor-icons/react/dist/ssr";
 import type { Dictionary } from "@/i18n";
 
-export function Faq({ dict }: { dict: Dictionary }) {
+type FaqItem = { q: string; a: string };
+
+export function Faq({ dict, items }: { dict: Dictionary; items?: readonly FaqItem[] }) {
   const f = dict.faq;
   return (
     <section id="kkk" aria-labelledby="kkk-title" className="mx-auto max-w-[1400px] px-4 py-20 sm:px-6 lg:px-10 lg:py-32">
@@ -10,7 +12,7 @@ export function Faq({ dict }: { dict: Dictionary }) {
           {f.title}
         </h2>
         <div className="border-t border-line-strong">
-          {f.items.map((item) => (
+          {(items ?? f.items).map((item) => (
             <details key={item.q} name="kkk" className="faq group border-b border-line-strong">
               <summary className="flex cursor-pointer list-none items-start justify-between gap-6 py-6 text-left font-display text-xl font-bold leading-snug tracking-[-0.015em] transition-colors duration-150 hover:text-leaf-ink sm:text-2xl [&::-webkit-details-marker]:hidden">
                 {item.q}

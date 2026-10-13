@@ -15,6 +15,8 @@ npm run dev
 - Copy: `src/i18n/dictionaries/et.ts` (Estonian, source) and `en.ts`. Every visible string is there.
 - Business facts (email, phone): `src/lib/site.ts`
 - Prospect previews (`/eelvaade/<slug>`, noindex, unlinked): `src/content/previews.ts`
+- Industry landing pages (`/kodulehe-tegemine-…`, Estonian only): `src/content/industries.ts`
+- Visit statistics (Umami, cookieless): `src/lib/analytics.ts`
 - Form submit handler (Formspree): `src/lib/submitQuote.ts`
 - Design system: `DESIGN.md`
 - Demo photo sources: `docs/image-sources.md`; fonts: `docs/fonts.md`
@@ -27,8 +29,9 @@ npm run dev
 - [x] Name the form provider in the privacy policy (both dictionaries)
 - [x] Robert's photo in `src/components/sections/About.tsx`
 - [x] Production domain https://lehesepp.ee (override with `NEXT_PUBLIC_SITE_URL`)
-- [ ] Confirm the timeline answer in the FAQ
-- [ ] Replace the example prospect in `src/content/previews.ts`
+- [x] Confirm the timeline answer in the FAQ
+- [x] Remove the example prospect from `src/content/previews.ts`
+- [ ] Umami website ID in `umami.websiteId` in `src/lib/site.ts` (visit statistics)
 
 ## Deploy
 

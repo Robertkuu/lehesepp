@@ -17,16 +17,7 @@ export type ProspectPreview = {
   note?: string;
 };
 
-export const previews: ProspectPreview[] = [
-  {
-    // TODO: example entry, replace with a real prospect.
-    slug: "kohvik-moisa",
-    business: "Kohvik Mõisa",
-    demoUrl: "https://example.com",
-    locale: "et",
-    embed: true,
-  },
-];
+export const previews: ProspectPreview[] = [];
 
 export function getPreview(slug: string) {
   return previews.find((p) => p.slug === slug);

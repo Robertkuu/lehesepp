@@ -9,8 +9,12 @@ import { emailUrl, phoneUrl } from "@/lib/site";
 import { Logo } from "@/components/Logo";
 import { buttonClass } from "@/components/ui/Button";
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
-  return previews.map((p) => ({ slug: p.slug }));
+  // A static export needs at least one path. With no previews, a placeholder
+  // slug builds a "not found" page so the route can stay empty.
+  return previews.length ? previews.map((p) => ({ slug: p.slug })) : [{ slug: "-" }];
 }
 
 export async function generateMetadata({ params }: PageProps<"/eelvaade/[slug]">): Promise<Metadata> {

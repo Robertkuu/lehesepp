@@ -11,8 +11,8 @@ type Demo = Dictionary["hero"]["demo"];
 const typeKeys: DemoTypeKey[] = ["cafe", "salon", "auto", "build", "general"];
 const swap = { duration: 0.32, ease: [0.23, 1, 0.32, 1] as const };
 
-export function DraftFrame({ demo }: { demo: Demo }) {
-  const [type, setType] = useState<DemoTypeKey>("cafe");
+export function DraftFrame({ demo, initialType = "cafe" }: { demo: Demo; initialType?: DemoTypeKey }) {
+  const [type, setType] = useState<DemoTypeKey>(initialType);
   const [name, setName] = useState("");
   // The wireframe intro plays once, on the first sample only.
   const [intro, setIntro] = useState(true);
@@ -106,7 +106,7 @@ export function DraftFrame({ demo }: { demo: Demo }) {
               exit={reduce ? { opacity: 0 } : { opacity: 0, filter: "blur(6px)" }}
               transition={reduce ? { duration: 0.15 } : swap}
             >
-              <SampleSite type={type} name={title} t={t} intro={intro && type === "cafe" && !reduce} priority={type === "cafe"} />
+              <SampleSite type={type} name={title} t={t} intro={intro && type === initialType && !reduce} priority={type === initialType} />
             </m.div>
           </AnimatePresence>
         </div>

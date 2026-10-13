@@ -1,39 +1,22 @@
-import type { CSSProperties } from "react";
 import { ArrowDownIcon, ArrowRightIcon } from "@phosphor-icons/react/dist/ssr";
 import type { Dictionary } from "@/i18n";
 import { ButtonLink } from "@/components/ui/Button";
 import { DraftFrame } from "@/components/hero/DraftFrame";
 
-function RevealLine({ text, offset }: { text: string; offset: number }) {
-  return (
-    <span className="block">
-      {text.split(" ").map((word, i) => (
-        <span key={i} className="reveal-word">
-          <span style={{ "--w": offset + i } as CSSProperties}>{word}</span>
-          {" "}
-        </span>
-      ))}
-    </span>
-  );
-}
-
 export function Hero({ dict }: { dict: Dictionary }) {
   const h = dict.hero;
-  const firstCount = h.titleA.split(" ").length;
   return (
     <section aria-labelledby="hero-title" className="mx-auto max-w-[1400px] px-4 pb-20 pt-10 sm:px-6 sm:pt-14 lg:px-10 lg:pb-28 lg:pt-14">
       <h1
         id="hero-title"
         className="font-display text-[clamp(2.15rem,8.2vw,5.25rem)] font-extrabold leading-[0.98] tracking-[-0.035em] text-ink"
       >
-        <RevealLine text={h.titleA} offset={0} />
-        <span className="text-leaf-ink">
-          <RevealLine text={h.titleB} offset={firstCount} />
-        </span>
+        <span className="block">{h.titleA}</span>
+        <span className="block text-leaf-ink">{h.titleB}</span>
       </h1>
 
       <div className="mt-10 grid gap-12 lg:mt-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
-        <div className="fade-up flex flex-col gap-8 lg:pt-8" style={{ "--d": "420ms" } as CSSProperties}>
+        <div className="flex flex-col gap-8 lg:pt-8">
           <p className="max-w-[34ch] text-lg leading-relaxed text-ink-2 sm:text-xl text-pretty">{h.sub}</p>
           <div className="flex flex-wrap gap-3">
             <ButtonLink href="#kontakt">

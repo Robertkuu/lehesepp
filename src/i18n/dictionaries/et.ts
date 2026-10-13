@@ -90,6 +90,7 @@ export const et = {
   },
   services: {
     title: "Teenused",
+    industries: "Kodulehed valdkondade kaupa",
     items: [
       {
         key: "new",
@@ -190,9 +191,8 @@ export const et = {
         a: "Iga projekt on erinev, seetõttu koostan igale ettevõttele eraldi pakkumise. Pakkumine on tasuta ega too kaasa kohustusi. Kuna eelvaade valmib enne tasumist, maksad ainult tulemuse eest, mida oled näinud.",
       },
       {
-        // TODO: kinnita ajakava.
         q: "Kui kiiresti leht valmib?",
-        a: "Eelvaade valmib tavaliselt ühe kuni kahe nädalaga. Pärast tagasisidet avaldatakse leht üldjuhul nädala jooksul. Täpse ajakava esitan pakkumises.",
+        a: "Kogu töö alates esimesest vestlusest kuni avaldamiseni võtab kõige rohkem kaks nädalat, tavaliselt valmib leht kiiremini.",
       },
       {
         q: "Kuidas on lood domeeni ja majutusega?",
@@ -250,6 +250,7 @@ export const et = {
   },
   footer: {
     tagline: "Kodulehed Eesti ettevõtetele.",
+    industries: "Valdkonnad",
     privacy: "Privaatsuspoliitika",
     rights: "Kõik õigused kaitstud.",
     contact: "Kontakt",
@@ -278,6 +279,7 @@ export const et = {
         h: "Kogutavad andmed",
         p: [
           "Pakkumise vormi täitmisel saan ettevõtte nime, sinu nime, e-posti aadressi, telefoninumbri, tegevusala, praeguse kodulehe aadressi ja sõnumi. Otse kirjutades või helistades saan andmed, mida ise jagad.",
+          "Külastuste statistikat kogun teenusega Umami, mis ei kasuta küpsiseid ega salvesta IP-aadresse. Statistika näitab ainult koondandmeid, näiteks mitu korda lehte vaadati ja kust külastajad tulid, ning sellest ei saa tuvastada üksikut inimest.",
           "Kui annad nõusoleku, kasutab leht Google Adsi küpsiseid, et mõõta, kas reklaamilt tulnud külastaja saatis päringu. Ilma nõusolekuta neid küpsiseid ei laadita. Nõusoleku saad igal ajal tagasi võtta lehe jaluses lingiga „Küpsiste seaded“.",
         ],
       },
@@ -286,13 +288,14 @@ export const et = {
         p: [
           "Andmeid kasutan ainult päringule vastamiseks, pakkumise koostamiseks ja koostöö korral lepingu täitmiseks. Õiguslik alus on lepingueelsed läbirääkimised ja leping (IKÜM art 6 lg 1 p b).",
           "Reklaami mõõtmise õiguslik alus on sinu nõusolek (IKÜM art 6 lg 1 p a).",
+          "Külastuste statistika õiguslik alus on minu õigustatud huvi teada, kuidas lehte kasutatakse (IKÜM art 6 lg 1 p f).",
           "Andmeid ei müüda ega jagata kolmandatele osapooltele turunduse eesmärgil.",
         ],
       },
       {
         h: "Volitatud töötlejad",
         p: [
-          "Leht on majutatud GitHub Pages teenuses (GitHub, Inc.), mis salvestab turvalisuse eesmärgil külastajate IP-aadressid. Vormi päringud edastatakse e-posti teenuse Formspree (Formspree, Inc.) kaudu. Nõusoleku korral töötleb reklaami mõõtmise andmeid Google Ireland Limited. Teenusepakkujad töötlevad andmeid ainult minu juhiste alusel.",
+          "Leht on majutatud GitHub Pages teenuses (GitHub, Inc.), mis salvestab turvalisuse eesmärgil külastajate IP-aadressid. Vormi päringud edastatakse e-posti teenuse Formspree (Formspree, Inc.) kaudu. Külastuste statistikat töötleb Umami Software, Inc. Nõusoleku korral töötleb reklaami mõõtmise andmeid Google Ireland Limited. Teenusepakkujad töötlevad andmeid ainult minu juhiste alusel.",
         ],
       },
       {

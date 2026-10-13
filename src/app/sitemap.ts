@@ -1,11 +1,12 @@
 import type { MetadataRoute } from "next";
 import { absoluteUrl, routes } from "@/i18n/config";
+import { industries, industryPath } from "@/content/industries";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
-  return (Object.keys(routes) as (keyof typeof routes)[]).flatMap((key) =>
+  const pages: MetadataRoute.Sitemap = (Object.keys(routes) as (keyof typeof routes)[]).flatMap((key) =>
     (["et", "en"] as const).map((locale) => ({
       url: absoluteUrl(routes[key][locale]),
       lastModified,
@@ -20,4 +21,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     })),
   );
+  // Estonian-only industry pages.
+  const industryPages: MetadataRoute.Sitemap = industries.map((i) => ({
+    url: absoluteUrl(industryPath(i.slug)),
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+  return [...pages, ...industryPages];
 }

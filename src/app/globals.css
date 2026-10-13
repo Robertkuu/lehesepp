@@ -212,48 +212,6 @@ html {
   }
 }
 
-/* ---------- Headline reveal ----------
-   Words come into focus rather than in from a clip: the text is painted from
-   the first frame (so it counts for LCP immediately) and sharpens into place. */
-.reveal-word {
-  display: inline-block;
-}
-.reveal-word > span {
-  display: inline-block;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .reveal-word > span {
-    animation: word-focus 720ms var(--ease-out) both;
-    animation-delay: calc(var(--w, 0) * 40ms + 40ms);
-  }
-  .fade-up {
-    animation: fade-up 700ms var(--ease-out) both;
-    animation-delay: var(--d, 0ms);
-  }
-}
-@keyframes word-focus {
-  from {
-    transform: translateY(0.28em);
-    filter: blur(10px);
-    opacity: 0.2;
-  }
-  to {
-    transform: translateY(0);
-    filter: blur(0);
-    opacity: 1;
-  }
-}
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* ---------- Services index: rules draw in, text follows ---------- */
 .index-rule {
   position: absolute;

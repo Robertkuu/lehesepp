@@ -88,6 +88,7 @@ export const en: Dictionary = {
   },
   services: {
     title: "Services",
+    industries: "Websites by industry",
     items: [
       {
         key: "new",
@@ -188,9 +189,8 @@ export const en: Dictionary = {
         a: "Every project is different, so each business receives its own quote. The quote is free and carries no obligation. Because the preview is ready before payment, you only pay for a result you have seen.",
       },
       {
-        // TODO: confirm timeline.
         q: "How long does it take?",
-        a: "The preview is usually ready within one to two weeks. After your feedback, the site normally goes live within a week. The quote includes the exact timeline.",
+        a: "From the first conversation to going live takes two weeks at most, and usually less.",
       },
       {
         q: "What about the domain and hosting?",
@@ -248,6 +248,7 @@ export const en: Dictionary = {
   },
   footer: {
     tagline: "Websites for businesses in Estonia.",
+    industries: "Industries",
     privacy: "Privacy policy",
     rights: "All rights reserved.",
     contact: "Contact",
@@ -276,6 +277,7 @@ export const en: Dictionary = {
         h: "Data collected",
         p: [
           "When you submit the quote form, I receive your business name, your name, email address, phone number, business type, current website address and message. When you write or call directly, I receive the information you choose to share.",
+          "Visit statistics are collected with Umami, which uses no cookies and does not store IP addresses. The statistics show only totals, such as how many times a page was viewed and where visitors came from, and cannot identify an individual person.",
           "If you give consent, the site uses Google Ads cookies to measure whether a visitor who came from an ad sent an enquiry. Without consent these cookies are not loaded. You can withdraw consent at any time with the “Cookie settings” link in the footer.",
         ],
       },
@@ -284,13 +286,14 @@ export const en: Dictionary = {
         p: [
           "Data is used only to respond to your enquiry, prepare a quote and, if we work together, perform the contract. The legal basis is pre-contractual steps and the contract (GDPR Art. 6(1)(b)).",
           "The legal basis for ad measurement is your consent (GDPR Art. 6(1)(a)).",
+          "The legal basis for visit statistics is my legitimate interest in knowing how the site is used (GDPR Art. 6(1)(f)).",
           "Data is never sold or shared with third parties for marketing purposes.",
         ],
       },
       {
         h: "Processors",
         p: [
-          "The site is hosted on GitHub Pages (GitHub, Inc.), which logs visitors' IP addresses for security purposes. Form requests are delivered through the email service Formspree (Formspree, Inc.). With your consent, ad measurement data is processed by Google Ireland Limited. These providers process data only on my instructions.",
+          "The site is hosted on GitHub Pages (GitHub, Inc.), which logs visitors' IP addresses for security purposes. Form requests are delivered through the email service Formspree (Formspree, Inc.). Visit statistics are processed by Umami Software, Inc. With your consent, ad measurement data is processed by Google Ireland Limited. These providers process data only on my instructions.",
         ],
       },
       {

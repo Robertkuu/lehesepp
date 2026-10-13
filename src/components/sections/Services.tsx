@@ -1,11 +1,13 @@
 import type { CSSProperties } from "react";
+import Link from "next/link";
 import { BrowserIcon, ArrowsClockwiseIcon, WrenchIcon, MapPinIcon } from "@phosphor-icons/react/dist/ssr";
 import type { Dictionary } from "@/i18n";
 import { InView } from "@/components/motion/InView";
 
 const icons = { new: BrowserIcon, redesign: ArrowsClockwiseIcon, care: WrenchIcon, google: MapPinIcon } as const;
 
-export function Services({ dict }: { dict: Dictionary }) {
+/** links: industry pages to list under the services (Estonian site only). */
+export function Services({ dict, links = [] }: { dict: Dictionary; links?: { href: string; label: string }[] }) {
   const s = dict.services;
   return (
     <section id="teenused" aria-labelledby="teenused-title" className="mx-auto max-w-[1400px] px-4 py-20 sm:px-6 lg:px-10 lg:py-32">
@@ -27,6 +29,25 @@ export function Services({ dict }: { dict: Dictionary }) {
           );
         })}
       </InView>
+      {links.length > 0 && (
+        <nav aria-labelledby="valdkonnad-title" className="mt-10">
+          <h3 id="valdkonnad-title" className="text-sm font-medium text-ink-2">
+            {s.industries}
+          </h3>
+          <ul className="mt-3 flex flex-wrap gap-2">
+            {links.map((l) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  className="press inline-flex h-11 items-center rounded-[var(--radius-frame)] border border-line-strong px-4 text-sm font-medium text-ink-2 transition-colors hover:border-ink hover:text-ink"
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
     </section>
   );
 }

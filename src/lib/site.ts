@@ -15,6 +15,9 @@ export const site = {
   // id: "AW-…" from Google Ads > Goals > Conversions > the action > Tag setup.
   // Empty id = no tag and no cookie banner.
   googleAds: { id: "", conversionLabel: "" },
+  // Visit statistics with Umami Cloud (cookieless, so no consent banner is needed).
+  // websiteId: from cloud.umami.is > Settings > Websites > the site > Edit. Empty = no script.
+  umami: { websiteId: "" },
 } as const;
 
 export const whatsappUrl = `https://wa.me/${site.phone.replace(/\D/g, "")}`;

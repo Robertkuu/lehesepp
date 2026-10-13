@@ -6,6 +6,7 @@ import { CheckIcon, CaretDownIcon, SpinnerGapIcon } from "@phosphor-icons/react/
 import type { Dictionary } from "@/i18n";
 import { submitQuote } from "@/lib/submitQuote";
 import { trackLead } from "@/lib/ads";
+import { trackEvent } from "@/lib/analytics";
 
 type Form = Dictionary["contact"]["form"];
 type Field = "businessName" | "contactName" | "email" | "needs";
@@ -64,6 +65,7 @@ export function QuoteForm({ form, locale, privacyHref }: { form: Form; locale: s
       });
       setStatus("sent");
       trackLead();
+      trackEvent("quote-sent", { locale });
     } catch {
       setStatus("error");
     }
