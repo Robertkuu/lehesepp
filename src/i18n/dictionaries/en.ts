@@ -2,9 +2,9 @@ import type { Dictionary } from "./et";
 
 export const en: Dictionary = {
   meta: {
-    title: "Lehesepp | Websites for businesses in Estonia",
+    title: "Website design for businesses in Estonia | Lehesepp",
     description:
-      "Websites for businesses of every kind across Estonia. A working preview comes first; you pay only once the site meets your expectations.",
+      "Website design for businesses across Estonia. A fast, mobile-friendly site, and you see a free working preview before you pay.",
     ogAlt: "Lehesepp: websites for businesses in Estonia",
   },
   nav: {
@@ -281,7 +281,7 @@ export const en: Dictionary = {
       {
         h: "Processors",
         p: [
-          "The site is hosted on GitHub Pages (GitHub, Inc.), which logs visitors' IP addresses for security purposes. Form requests are delivered through an email service (TODO: Resend or Formspree). These providers process data only on my instructions.",
+          "The site is hosted on GitHub Pages (GitHub, Inc.), which logs visitors' IP addresses for security purposes. Form requests are delivered through the email service Formspree (Formspree, Inc.). These providers process data only on my instructions.",
         ],
       },
       {

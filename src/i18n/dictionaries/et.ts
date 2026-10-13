@@ -4,9 +4,9 @@ export type DemoTypeKey = "cafe" | "salon" | "auto" | "build" | "general";
 
 export const et = {
   meta: {
-    title: "Lehesepp | Kodulehed Eesti ettevõtetele",
+    title: "Kodulehe tegemine ettevõtetele | Lehesepp",
     description:
-      "Kodulehed igas valdkonnas tegutsevatele ettevõtetele üle Eesti. Kõigepealt valmib eelvaade, maksad alles siis, kui leht sobib.",
+      "Kodulehe tegemine ettevõtetele üle Eesti. Kiire ja mobiilisõbralik veebileht, mille eelvaate näed tasuta enne, kui maksad.",
     ogAlt: "Lehesepp: kodulehed Eesti ettevõtetele",
   },
   nav: {
@@ -283,7 +283,7 @@ export const et = {
       {
         h: "Volitatud töötlejad",
         p: [
-          "Leht on majutatud GitHub Pages teenuses (GitHub, Inc.), mis salvestab turvalisuse eesmärgil külastajate IP-aadressid. Vormi päringud edastatakse e-posti teenuse kaudu (TODO: Resend või Formspree). Teenusepakkujad töötlevad andmeid ainult minu juhiste alusel.",
+          "Leht on majutatud GitHub Pages teenuses (GitHub, Inc.), mis salvestab turvalisuse eesmärgil külastajate IP-aadressid. Vormi päringud edastatakse e-posti teenuse Formspree (Formspree, Inc.) kaudu. Teenusepakkujad töötlevad andmeid ainult minu juhiste alusel.",
         ],
       },
       {

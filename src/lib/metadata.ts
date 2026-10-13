@@ -27,6 +27,7 @@ export function pageMetadata(locale: Locale, route: RouteKey, title?: string): M
       type: "website",
       siteName: "Lehesepp",
       locale: locale === "et" ? "et_EE" : "en_GB",
+      alternateLocale: locale === "et" ? "en_GB" : "et_EE",
       url: path,
       title: title ?? dict.meta.title,
       description: dict.meta.description,

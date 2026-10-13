@@ -1,3 +1,5 @@
+import { site } from "@/lib/site";
+
 export type QuoteRequest = {
   businessName: string;
   contactName: string;
@@ -10,22 +12,25 @@ export type QuoteRequest = {
   locale: string;
 };
 
-/**
- * TODO: connect the form to a real endpoint before launch.
- *
- * Option A, Formspree: create a form at formspree.io and replace the body with
- *   const res = await fetch("https://formspree.io/f/<FORM_ID>", {
- *     method: "POST",
- *     headers: { "Content-Type": "application/json", Accept: "application/json" },
- *     body: JSON.stringify(data),
- *   });
- *   if (!res.ok) throw new Error("Formspree rejected the request");
- *
- * Option B, Resend: add a route handler at src/app/api/quote/route.ts that calls
- *   resend.emails.send({ from, to, subject, text }) with RESEND_API_KEY from the
- *   environment, and POST to "/api/quote" here.
- */
+/** Sends the quote request to Formspree, which forwards it to the inbox set in the Formspree dashboard. */
 export async function submitQuote(data: QuoteRequest): Promise<void> {
-  if (process.env.NODE_ENV !== "production") console.info("[quote form] TODO: send", data);
-  await new Promise((resolve) => setTimeout(resolve, 900));
+  if (!site.formspreeId) throw new Error("Formspree form ID is not set in src/lib/site.ts");
+  const res = await fetch(`https://formspree.io/f/${site.formspreeId}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify({
+      _subject: `Päring: ${data.businessName}`,
+      // Formspree uses the "email" field as the reply-to address.
+      email: data.email,
+      ettevõte: data.businessName,
+      nimi: data.contactName,
+      telefon: data.phone,
+      tegevusala: data.businessType,
+      praegune_leht: data.currentSite,
+      vajadused: data.needs.join(", "),
+      sõnum: data.message,
+      keel: data.locale,
+    }),
+  });
+  if (!res.ok) throw new Error(`Formspree responded ${res.status}`);
 }

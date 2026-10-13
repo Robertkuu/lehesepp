@@ -55,7 +55,7 @@ export function Why({ dict, locale }: { dict: Dictionary; locale: Locale }) {
 
           <div className="flex items-center gap-4">
             <span className="relative size-20 shrink-0 overflow-hidden rounded-full bg-paper/10">
-              <Image src="/robert.webp" alt="" fill sizes="80px" className="object-cover object-[50%_20%]" />
+              <Image src="/robert-avatar.jpg" alt="" fill sizes="80px" className="object-cover object-[50%_20%]" />
             </span>
             <span className="grid">
               <span className="font-display text-2xl font-bold tracking-[-0.02em]">{site.founder}</span>
