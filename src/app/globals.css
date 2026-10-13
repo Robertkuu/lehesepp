@@ -1,0 +1,429 @@
+@import "tailwindcss";
+
+/* Kavand: paper, ink, one leaf green. Light is the default; dark follows the OS. */
+:root {
+  --paper: #f1f3ee;
+  --paper-2: #e6eae3;
+  --paper-3: #dce2d8;
+  --ink: #0e1510;
+  --ink-2: #4a544c;
+  --line: rgb(14 21 16 / 0.14);
+  --line-strong: rgb(14 21 16 / 0.32);
+  --leaf: #34b85a;
+  --leaf-hover: #2ea551;
+  --leaf-ink: #17703a;
+  --on-leaf: #0e1510;
+  --on-leaf-2: #133a20;
+  --focus: #17703a;
+  --danger: #b42318;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0c110e;
+    --paper-2: #131a15;
+    --paper-3: #1a231d;
+    --ink: #e8ece5;
+    --ink-2: #a3aea5;
+    --line: rgb(232 236 229 / 0.12);
+    --line-strong: rgb(232 236 229 / 0.3);
+    --leaf: #45c46b;
+    --leaf-hover: #55cf79;
+    --leaf-ink: #6fd88e;
+    --on-leaf: #0c110e;
+    --on-leaf-2: #133a20;
+    --focus: #6fd88e;
+    --danger: #ff8a7a;
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-paper-3: var(--paper-3);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-leaf: var(--leaf);
+  --color-leaf-hover: var(--leaf-hover);
+  --color-leaf-ink: var(--leaf-ink);
+  --color-on-leaf: var(--on-leaf);
+  --color-on-leaf-2: var(--on-leaf-2);
+  --color-danger: var(--danger);
+  --font-sans: var(--font-text);
+  --font-display: var(--font-bricolage);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --radius-frame: 6px;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-text), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--leaf);
+  color: var(--on-leaf);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+input,
+textarea {
+  caret-color: var(--leaf-ink);
+}
+
+a {
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+.font-display {
+  font-family: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* Press feedback for anything clickable. */
+.press {
+  transition: transform 160ms var(--ease-out), background-color 160ms ease, color 160ms ease,
+    border-color 160ms ease;
+}
+.press:active {
+  transform: scale(0.97);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .press:active {
+    transform: none;
+  }
+}
+
+/* Scrollbar in palette. */
+html {
+  scrollbar-color: var(--line-strong) var(--paper);
+}
+
+/* ---------- Hero draft frame ---------- */
+/* Crop marks at the frame corners: this is a sheet being drafted. */
+.crop {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+}
+.crop::before,
+.crop::after {
+  content: "";
+  position: absolute;
+  background: var(--line-strong);
+}
+.crop::before {
+  width: 14px;
+  height: 1px;
+}
+.crop::after {
+  width: 1px;
+  height: 14px;
+}
+.crop-tl {
+  top: -8px;
+  left: -8px;
+}
+.crop-tr {
+  top: -8px;
+  right: -8px;
+  transform: scaleX(-1);
+}
+.crop-bl {
+  bottom: -8px;
+  left: -8px;
+  transform: scaleY(-1);
+}
+.crop-br {
+  bottom: -8px;
+  right: -8px;
+  transform: scale(-1);
+}
+
+/* First load: every block starts as a wireframe, then gets filled in. */
+@media (prefers-reduced-motion: no-preference) {
+  .draft-block {
+    position: relative;
+    animation: draft-ink 520ms var(--ease-out) both;
+    animation-delay: calc(500ms + var(--i, 0) * 110ms);
+  }
+  .draft-block::after {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border: 1px dashed var(--s-muted);
+    border-radius: 4px;
+    background: var(--s-bg);
+    pointer-events: none;
+    animation: draft-lift 520ms var(--ease-out) both;
+    animation-delay: calc(500ms + var(--i, 0) * 110ms);
+  }
+}
+@keyframes draft-ink {
+  from {
+    opacity: 0.35;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes draft-lift {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* ---------- Headline reveal ----------
+   Words come into focus rather than in from a clip: the text is painted from
+   the first frame (so it counts for LCP immediately) and sharpens into place. */
+.reveal-word {
+  display: inline-block;
+}
+.reveal-word > span {
+  display: inline-block;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-word > span {
+    animation: word-focus 720ms var(--ease-out) both;
+    animation-delay: calc(var(--w, 0) * 40ms + 40ms);
+  }
+  .fade-up {
+    animation: fade-up 700ms var(--ease-out) both;
+    animation-delay: var(--d, 0ms);
+  }
+}
+@keyframes word-focus {
+  from {
+    transform: translateY(0.28em);
+    filter: blur(10px);
+    opacity: 0.2;
+  }
+  to {
+    transform: translateY(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Services index: rules draw in, text follows ---------- */
+.index-rule {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: var(--line-strong);
+  transform-origin: left;
+}
+.index-list > li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .index-list[data-inview="hidden"] .index-rule {
+    transform: scaleX(0);
+  }
+  .index-list[data-inview="hidden"] .index-text {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  .index-rule {
+    transition: transform 700ms var(--ease-out);
+    transition-delay: calc(var(--i) * 80ms);
+  }
+  .index-text {
+    transition: opacity 600ms var(--ease-out), transform 600ms var(--ease-out);
+    transition-delay: calc(var(--i) * 90ms + 120ms);
+  }
+}
+
+/* Comparison seam: vertical swipes keep scrolling the page. */
+.compare-range {
+  touch-action: pan-y;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.compare-range:focus-visible {
+  opacity: 1;
+  background: transparent;
+  outline: 2px solid var(--on-leaf);
+  outline-offset: 4px;
+}
+.compare-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 44px;
+  height: 100vh;
+  background: transparent;
+}
+.compare-range::-moz-range-thumb {
+  width: 44px;
+  height: 100vh;
+  background: transparent;
+  border: 0;
+}
+
+/* ---------- Process: one unbroken line ---------- */
+.process-track {
+  position: absolute;
+  left: 10px;
+  top: 0.55rem;
+  bottom: 0.5rem;
+  width: 2px;
+  background: var(--line);
+  overflow: hidden;
+}
+.process-fill {
+  position: absolute;
+  inset: 0;
+  background: var(--leaf);
+  transform-origin: top;
+  transform: scaleY(var(--fill, 0));
+}
+.process-node {
+  position: absolute;
+  left: -2.5rem;
+  top: 0.3rem;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  border: 2px solid var(--line-strong);
+  background: var(--paper);
+  transition: background-color 300ms var(--ease-out), border-color 300ms var(--ease-out), transform 300ms var(--ease-out);
+}
+.process li[data-on="true"] .process-node {
+  background: var(--leaf);
+  border-color: var(--leaf);
+}
+.process li h3 {
+  color: var(--ink-2);
+}
+.process li[data-on="true"] h3 {
+  color: var(--ink);
+}
+@media (min-width: 64rem) {
+  .process-track {
+    left: 0;
+    right: 0;
+    top: 10px;
+    bottom: auto;
+    width: auto;
+    height: 2px;
+  }
+  .process-fill {
+    transform-origin: left;
+    transform: scaleX(var(--fill, 0));
+  }
+  .process-node {
+    left: 0;
+    top: -3rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .process li h3 {
+    color: var(--ink);
+  }
+}
+
+/* ---------- Why bento ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .bento[data-inview="hidden"] .bento-cell {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  .bento-cell {
+    transition: opacity 650ms var(--ease-out), transform 650ms var(--ease-out);
+    transition-delay: calc(var(--i) * 70ms);
+  }
+  .bento[data-inview="hidden"] .phone {
+    transform: translateY(5rem);
+  }
+  .phone {
+    transition: transform 900ms var(--ease-out) 200ms;
+  }
+}
+
+/* ---------- FAQ: native details, height animated where supported ---------- */
+.faq::details-content {
+  block-size: 0;
+  overflow-y: clip;
+  transition: block-size 260ms var(--ease-out), content-visibility 260ms allow-discrete;
+}
+.faq[open]::details-content {
+  block-size: auto;
+}
+:root {
+  interpolate-size: allow-keywords;
+}
+@media (prefers-reduced-motion: reduce) {
+  .faq::details-content {
+    transition: none;
+  }
+}
+
+/* ---------- About photo reveal ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .about-photo {
+    transition: clip-path 800ms var(--ease-out);
+    clip-path: inset(0 0 0 0);
+  }
+  .about-photo-wrap[data-inview="hidden"] .about-photo {
+    clip-path: inset(100% 0 0 0);
+  }
+}
+
+/* Footer wordmark spans the full content width: "lehesepp" in the display
+   font is ~3.29em wide (after the -0.04em pull-in), so 30cqw fills the
+   container. Re-measure if the display font changes. */
+.footer-mark {
+  font-size: 30cqw;
+  line-height: 0.82;
+  letter-spacing: -0.03em;
+  padding-bottom: 0.2em;
+  margin-left: -0.04em;
+}
