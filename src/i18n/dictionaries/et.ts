@@ -90,7 +90,6 @@ export const et = {
   },
   services: {
     title: "Teenused",
-    industries: "Kodulehed valdkondade kaupa",
     items: [
       {
         key: "new",

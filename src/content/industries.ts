@@ -16,7 +16,6 @@ export type Industry = {
   title: string;
   lead: string;
   features: { title: string; body: string }[];
-  faq: { q: string; a: string }[];
 };
 
 export const industries: Industry[] = [
@@ -47,20 +46,6 @@ export const industries: Industry[] = [
         body: "Toidu- ja interjöörifotod laaditakse kiiresti ka aeglase mobiilsideühenduse korral, nii et leht ei jää pilte ootama.",
       },
     ],
-    faq: [
-      {
-        q: "Kas saan menüüd hiljem muuta?",
-        a: "Jah. Hinnad, päevapakkumised ja hooajalised muudatused teen igakuise hoolduse raames või eraldi kokkuleppel. Kui soovid menüüd ise hallata, leiame pakkumise koostamisel sobiva lahenduse.",
-      },
-      {
-        q: "Kas kodulehe kaudu saab lauda broneerida?",
-        a: "Jah. Lehe saab ühendada sinu olemasoleva broneerimissüsteemiga või lisada broneerimispäringu vormi, mis saadab päringu sinu e-postile.",
-      },
-      {
-        q: "Kas mind leitakse Google'i kaardilt?",
-        a: "Loon või korrastan Google'i ettevõtteprofiili, et kohvik oleks kaardil leitav koos lahtiolekuaegade, fotode ja lingiga kodulehele.",
-      },
-    ],
   },
   {
     slug: "kodulehe-tegemine-ilusalongile",
@@ -87,20 +72,6 @@ export const industries: Industry[] = [
       {
         title: "Meistrite tutvustus",
         body: "Iga meistri lühike tutvustus aitab kliendil valida endale sobiva inimese.",
-      },
-    ],
-    faq: [
-      {
-        q: "Kas lehe saab ühendada broneerimissüsteemiga?",
-        a: "Jah. Kui kasutad juba broneerimissüsteemi, lisan lehele nupud, mis avavad selle otse. Kui süsteemi pole, aitan valida sobiva või lisan lihtsa päringuvormi.",
-      },
-      {
-        q: "Kas hinnakirja saab hiljem muuta?",
-        a: "Jah. Hinnamuudatused teen igakuise hoolduse raames või eraldi kokkuleppel.",
-      },
-      {
-        q: "Kas leht sobib ka üksikmeistrile?",
-        a: "Jah. Leht tehakse ettevõtte suurust arvestades ja sobib nii ühele meistrile kui ka mitme töötajaga salongile.",
       },
     ],
   },
@@ -131,20 +102,6 @@ export const industries: Industry[] = [
         body: "Aadress, kaart ja lahtiolekuajad on kohe nähtavad, koos nupuga, mis avab telefonis teejuhised.",
       },
     ],
-    faq: [
-      {
-        q: "Kas kliendid saavad lehe kaudu aega broneerida?",
-        a: "Jah. Lisan broneerimispäringu vormi või ühendan lehe sinu olemasoleva broneerimissüsteemiga.",
-      },
-      {
-        q: "Kas rehvihooajal saab lehele teate lisada?",
-        a: "Jah. Hooajalised teated ja hinnamuudatused teen igakuise hoolduse raames või eraldi kokkuleppel.",
-      },
-      {
-        q: "Kas mind leitakse, kui keegi otsib lähedalt töökoda?",
-        a: "Loon või korrastan Google'i ettevõtteprofiili ja seadistan lehe asukohaandmed, et töökoda oleks kaardil leitav. Kohta otsingutulemustes ei saa keegi garanteerida, kuid tugev alus on loodud.",
-      },
-    ],
   },
   {
     slug: "kodulehe-tegemine-ehitusettevottele",
@@ -171,20 +128,6 @@ export const industries: Industry[] = [
       {
         title: "Tööpiirkond",
         body: "Lehel on selgelt kirjas, kus töötate, et päringud tuleksid sealt, kus sul on mugav töid teha.",
-      },
-    ],
-    faq: [
-      {
-        q: "Mul on vähe tööde fotosid. Kas sellest piisab?",
-        a: "Piisab ka mõnest heast objektist. Aitan valida parimad fotod ja vajadusel kirjeldame tööd tekstiga. Galeriid saab hiljem täiendada.",
-      },
-      {
-        q: "Kas kliendid saavad lehe kaudu hinnapäringu saata?",
-        a: "Jah. Päringuvorm saadab projekti kirjelduse ja kliendi kontaktandmed otse sinu e-postile.",
-      },
-      {
-        q: "Kas lehele saab hiljem uusi objekte lisada?",
-        a: "Jah. Uued objektid lisan igakuise hoolduse raames või eraldi kokkuleppel.",
       },
     ],
   },

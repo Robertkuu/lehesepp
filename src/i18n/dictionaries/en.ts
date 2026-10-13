@@ -88,7 +88,6 @@ export const en: Dictionary = {
   },
   services: {
     title: "Services",
-    industries: "Websites by industry",
     items: [
       {
         key: "new",

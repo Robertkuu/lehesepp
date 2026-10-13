@@ -2,7 +2,8 @@ import { CheckIcon } from "@phosphor-icons/react/dist/ssr";
 import type { Dictionary } from "@/i18n";
 import { DraftCompare } from "@/components/offer/DraftCompare";
 
-export function Offer({ dict }: { dict: Dictionary }) {
+/** compare: show the draft/finished slider (it uses the café sample, so industry pages hide it). */
+export function Offer({ dict, compare = true }: { dict: Dictionary; compare?: boolean }) {
   const o = dict.offer;
   const cafe = dict.hero.demo.types.cafe;
   return (
@@ -12,9 +13,11 @@ export function Offer({ dict }: { dict: Dictionary }) {
           <span className="block">{o.titleA}</span>
           <span className="block">{o.titleB}</span>
         </h2>
-        <div className="mt-12 lg:mt-16">
-          <DraftCompare sample={cafe} draftLabel={o.draft} doneLabel={o.done} />
-        </div>
+        {compare && (
+          <div className="mt-12 lg:mt-16">
+            <DraftCompare sample={cafe} draftLabel={o.draft} doneLabel={o.done} />
+          </div>
+        )}
         <div className="mt-12 grid gap-8 lg:mt-16 lg:grid-cols-[minmax(0,6fr)_minmax(0,6fr)] lg:gap-16">
           <p className="max-w-[48ch] text-lg leading-relaxed text-on-leaf-2 sm:text-xl text-pretty">{o.body}</p>
           <ul className="grid content-start gap-4 sm:grid-cols-3 sm:gap-6">

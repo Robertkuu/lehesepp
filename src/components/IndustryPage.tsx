@@ -11,7 +11,6 @@ import { DraftFrame } from "@/components/hero/DraftFrame";
 import { InView } from "@/components/motion/InView";
 import { Offer } from "@/components/sections/Offer";
 import { Process } from "@/components/sections/Process";
-import { Faq } from "@/components/sections/Faq";
 import { Contact } from "@/components/sections/Contact";
 
 function IndustryJsonLd({ industry }: { industry: Industry }) {
@@ -36,17 +35,7 @@ function IndustryJsonLd({ industry }: { industry: Industry }) {
           { "@type": "ListItem", position: 1, name: "Lehesepp", item: absoluteUrl(routes.home.et) },
           { "@type": "ListItem", position: 2, name: industry.title, item: url },
         ],
-      },
-      {
-        "@type": "FAQPage",
-        "@id": `${url}#faq`,
-        inLanguage: "et",
-        mainEntity: industry.faq.map((f) => ({
-          "@type": "Question",
-          name: f.q,
-          acceptedAnswer: { "@type": "Answer", text: f.a },
-        })),
-      },
+      }
     ],
   };
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, "\\u003c") }} />;
@@ -113,9 +102,8 @@ export function IndustryPage({ industry }: { industry: Industry }) {
           </InView>
         </section>
 
-        <Offer dict={dict} />
+        <Offer dict={dict} compare={false} />
         <Process dict={dict} />
-        <Faq dict={dict} items={industry.faq} />
         <Contact dict={dict} locale="et" />
 
         <nav aria-labelledby="valdkonnad-title" className="mx-auto max-w-[1400px] px-4 py-14 sm:px-6 lg:px-10">
