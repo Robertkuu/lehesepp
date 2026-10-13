@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Dictionary } from "@/i18n";
 import { routes, otherLocale, type Locale, type RouteKey } from "@/i18n/config";
+import { ConsentSettingsLink } from "@/components/ConsentBanner";
 import { site, emailUrl, phoneUrl } from "@/lib/site";
 
 export function Footer({ dict, locale, route = "home" }: { dict: Dictionary; locale: Locale; route?: RouteKey }) {
@@ -27,6 +28,7 @@ export function Footer({ dict, locale, route = "home" }: { dict: Dictionary; loc
           <Link href={routes.privacy[locale]} className="w-fit text-ink-2 transition-colors hover:text-ink">
             {f.privacy}
           </Link>
+          <ConsentSettingsLink label={f.cookies} />
         </div>
         <div className="grid content-start gap-2 text-sm">
           <p className="font-semibold">{f.language}</p>

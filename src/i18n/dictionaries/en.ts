@@ -252,6 +252,14 @@ export const en: Dictionary = {
     rights: "All rights reserved.",
     contact: "Contact",
     language: "Language",
+    cookies: "Cookie settings",
+  },
+  consent: {
+    title: "Cookies",
+    body: "I use Google Ads cookies to measure whether ads lead to enquiries. They are not loaded without your consent.",
+    accept: "Accept",
+    reject: "Decline",
+    privacy: "Privacy policy",
   },
   privacy: {
     title: "Privacy policy",
@@ -268,20 +276,21 @@ export const en: Dictionary = {
         h: "Data collected",
         p: [
           "When you submit the quote form, I receive your business name, your name, email address, phone number, business type, current website address and message. When you write or call directly, I receive the information you choose to share.",
-          "This site uses no tracking cookies and no advertising networks.",
+          "If you give consent, the site uses Google Ads cookies to measure whether a visitor who came from an ad sent an enquiry. Without consent these cookies are not loaded. You can withdraw consent at any time with the “Cookie settings” link in the footer.",
         ],
       },
       {
         h: "Purpose of processing",
         p: [
           "Data is used only to respond to your enquiry, prepare a quote and, if we work together, perform the contract. The legal basis is pre-contractual steps and the contract (GDPR Art. 6(1)(b)).",
+          "The legal basis for ad measurement is your consent (GDPR Art. 6(1)(a)).",
           "Data is never sold or shared with third parties for marketing purposes.",
         ],
       },
       {
         h: "Processors",
         p: [
-          "The site is hosted on GitHub Pages (GitHub, Inc.), which logs visitors' IP addresses for security purposes. Form requests are delivered through the email service Formspree (Formspree, Inc.). These providers process data only on my instructions.",
+          "The site is hosted on GitHub Pages (GitHub, Inc.), which logs visitors' IP addresses for security purposes. Form requests are delivered through the email service Formspree (Formspree, Inc.). With your consent, ad measurement data is processed by Google Ireland Limited. These providers process data only on my instructions.",
         ],
       },
       {

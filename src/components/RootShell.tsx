@@ -2,8 +2,10 @@ import type { ReactNode } from "react";
 import type { Viewport } from "next";
 import { bricolage, schibsted } from "@/app/fonts";
 import { sampleFontVars } from "@/components/samples/fonts";
-import type { Locale } from "@/i18n/config";
 import { MotionProvider } from "@/components/motion/MotionProvider";
+import { ConsentBanner } from "@/components/ConsentBanner";
+import { getDictionary } from "@/i18n";
+import { routes, type Locale } from "@/i18n/config";
 import "@/app/globals.css";
 
 export const viewport: Viewport = {
@@ -18,6 +20,7 @@ export function RootShell({ locale, children }: { locale: Locale; children: Reac
     <html lang={locale} className={`${bricolage.variable} ${schibsted.variable} ${sampleFontVars}`}>
       <body className="min-h-dvh">
         <MotionProvider>{children}</MotionProvider>
+        <ConsentBanner t={getDictionary(locale).consent} privacyHref={routes.privacy[locale]} />
       </body>
     </html>
   );

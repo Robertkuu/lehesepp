@@ -254,6 +254,14 @@ export const et = {
     rights: "Kõik õigused kaitstud.",
     contact: "Kontakt",
     language: "Keel",
+    cookies: "Küpsiste seaded",
+  },
+  consent: {
+    title: "Küpsised",
+    body: "Kasutan Google Adsi küpsiseid, et mõõta, kas reklaam toob päringuid. Ilma sinu nõusolekuta neid ei laadita.",
+    accept: "Nõustun",
+    reject: "Keeldun",
+    privacy: "Privaatsuspoliitika",
   },
   privacy: {
     title: "Privaatsuspoliitika",
@@ -270,20 +278,21 @@ export const et = {
         h: "Kogutavad andmed",
         p: [
           "Pakkumise vormi täitmisel saan ettevõtte nime, sinu nime, e-posti aadressi, telefoninumbri, tegevusala, praeguse kodulehe aadressi ja sõnumi. Otse kirjutades või helistades saan andmed, mida ise jagad.",
-          "Leht ei kasuta jälgimisküpsiseid ega reklaamivõrgustikke.",
+          "Kui annad nõusoleku, kasutab leht Google Adsi küpsiseid, et mõõta, kas reklaamilt tulnud külastaja saatis päringu. Ilma nõusolekuta neid küpsiseid ei laadita. Nõusoleku saad igal ajal tagasi võtta lehe jaluses lingiga „Küpsiste seaded“.",
         ],
       },
       {
         h: "Andmete kasutamise eesmärk",
         p: [
           "Andmeid kasutan ainult päringule vastamiseks, pakkumise koostamiseks ja koostöö korral lepingu täitmiseks. Õiguslik alus on lepingueelsed läbirääkimised ja leping (IKÜM art 6 lg 1 p b).",
+          "Reklaami mõõtmise õiguslik alus on sinu nõusolek (IKÜM art 6 lg 1 p a).",
           "Andmeid ei müüda ega jagata kolmandatele osapooltele turunduse eesmärgil.",
         ],
       },
       {
         h: "Volitatud töötlejad",
         p: [
-          "Leht on majutatud GitHub Pages teenuses (GitHub, Inc.), mis salvestab turvalisuse eesmärgil külastajate IP-aadressid. Vormi päringud edastatakse e-posti teenuse Formspree (Formspree, Inc.) kaudu. Teenusepakkujad töötlevad andmeid ainult minu juhiste alusel.",
+          "Leht on majutatud GitHub Pages teenuses (GitHub, Inc.), mis salvestab turvalisuse eesmärgil külastajate IP-aadressid. Vormi päringud edastatakse e-posti teenuse Formspree (Formspree, Inc.) kaudu. Nõusoleku korral töötleb reklaami mõõtmise andmeid Google Ireland Limited. Teenusepakkujad töötlevad andmeid ainult minu juhiste alusel.",
         ],
       },
       {

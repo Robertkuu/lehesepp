@@ -11,6 +11,10 @@ export const site = {
   // Formspree form ID (the part after formspree.io/f/). Public by design: it is visible in the
   // page source of every Formspree form. Empty = the form shows its error message.
   formspreeId: "xljgpnpk",
+  // Google Ads conversion tracking. Loaded only after the visitor accepts cookies.
+  // id: "AW-…" from Google Ads > Goals > Conversions > the action > Tag setup.
+  // Empty id = no tag and no cookie banner.
+  googleAds: { id: "", conversionLabel: "" },
 } as const;
 
 export const whatsappUrl = `https://wa.me/${site.phone.replace(/\D/g, "")}`;
