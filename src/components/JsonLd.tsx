@@ -18,7 +18,7 @@ export function JsonLd({ locale }: { locale: Locale }) {
         email: site.email,
         telephone: site.phone,
         image: `${siteUrl}/og/${locale}.png`,
-        logo: `${siteUrl}/og/${locale}.png`,
+        logo: `${siteUrl}/apple-icon.png`,
         founder: { "@type": "Person", name: site.founder },
         areaServed: { "@type": "Country", name: "Estonia" },
         address: { "@type": "PostalAddress", addressCountry: "EE" },
