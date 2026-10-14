@@ -22,7 +22,7 @@ export const en: Dictionary = {
   hero: {
     titleA: "Websites for businesses in Estonia.",
     titleB: "See the finished site before you pay.",
-    sub: "Websites for every kind of business, from cafés and salons to construction and service companies. A working preview comes first, then you decide.",
+    sub: "We build websites for every kind of business: cafés, beauty salons, construction firms and many more. We make a preview first, and only then do you decide.",
     cta: "Get a quote",
     secondary: "Process",
     demo: {
@@ -30,7 +30,7 @@ export const en: Dictionary = {
       inputLabel: "Your business name",
       inputPlaceholder: "For example Kohvik Mõisa",
       typesLabel: "Business type",
-      note: "Sample sites. The preview for your business is free of charge.",
+      note: "These are samples. We make the preview for your business free of charge.",
       draftLabel: "draft",
       types: {
         cafe: {
@@ -39,14 +39,14 @@ export const en: Dictionary = {
           tagline: "Fresh coffee and pastries baked on site every morning.",
           nav: ["Menu", "About", "Contact"],
           cta: "Book a table",
-          info: "Open daily 8-18",
+          info: "Open daily 8–18",
           listLabel: "In the counter today",
           list: ["Cardamom bun", "Rhubarb cake", "Curd pie"],
         },
         salon: {
           label: "Hair salon",
           sample: "Salong Liis",
-          tagline: "Cuts, colour and care in a calm setting.",
+          tagline: "Cuts, colouring and care in a calm atmosphere.",
           nav: ["Services", "About", "Contact"],
           cta: "Book a time",
           info: "Kalamaja, Tallinn",
@@ -59,7 +59,7 @@ export const en: Dictionary = {
           tagline: "Servicing, repairs and tyre changes in one place.",
           nav: ["Services", "Tyres", "Contact"],
           cta: "Book a service",
-          info: "Mon-Fri 8-18",
+          info: "Mon–Fri 8–18",
           listLabel: "Services",
           list: ["Scheduled service", "Diagnostics", "Tyre change"],
         },
@@ -80,7 +80,7 @@ export const en: Dictionary = {
           nav: ["Services", "About", "Contact"],
           cta: "Get in touch",
           info: "Tallinn and Tartu",
-          listLabel: "Why us",
+          listLabel: "Why choose us",
           list: ["15 years of experience", "200+ happy clients", "Reply within 24 hours"],
         },
       },
@@ -92,12 +92,12 @@ export const en: Dictionary = {
       {
         key: "new",
         title: "A new website",
-        body: "For businesses without a website, or whose online presence is limited to social media. The site explains clearly what you offer and how to reach you.",
+        body: "For businesses that do not have a website yet or have so far only been on social media. The site says briefly what you offer and how to reach you.",
       },
       {
         key: "redesign",
         title: "Website redesign",
-        body: "For sites that are slow, difficult to use on a phone or outdated. I keep the content that works and rebuild the rest.",
+        body: "If your current site is slow, awkward on a phone or outdated, we make a new one. Good content stays, and we rebuild the rest.",
       },
       {
         key: "care",
@@ -107,36 +107,36 @@ export const en: Dictionary = {
       {
         key: "google",
         title: "Google visibility",
-        body: "Setting up and maintaining your Google Business profile, map listing and the search engine fundamentals.",
+        body: "We create or tidy up your Google Business profile so you can be found on the map, and set up the search engine fundamentals.",
       },
     ],
   },
   offer: {
     titleA: "A preview before any commitment.",
     titleB: "You pay only if the site is right.",
-    body: "You do not have to commit on the basis of a sketch or a promise. I build your new website and send you a link. If the result does not meet your expectations, there is no obligation.",
+    body: "You do not have to commit on the basis of a sketch or a promise. We build your new website and send you a preview. If the result does not meet your expectations, there is no obligation of any kind.",
     draft: "Draft",
     done: "Finished",
-    facts: ["No deposit", "The preview is a working site", "You decide after the preview"],
+    facts: ["No deposit", "The preview is a real, working site", "You decide after the preview"],
   },
   process: {
     title: "Process",
     steps: [
       {
         title: "Free consultation",
-        body: "A short call or meeting to understand your business and its customers.",
+        body: "A short call or meeting to understand your business needs and your customers.",
       },
       {
         title: "Preview",
-        body: "I build the new website as a working preview. You receive a link and can review it on your phone.",
+        body: "We build your new website as a working preview and send you a link so you can view it on your phone too.",
       },
       {
         title: "Feedback",
-        body: "We review the preview together and I make the necessary changes.",
+        body: "We go through the preview together and make the necessary changes.",
       },
       {
         title: "Launch",
-        body: "I connect the domain, set up Google services and hand over access. The invoice follows the launch.",
+        body: "We connect the domain, set up Google services and hand over access to you. The invoice comes only after launch.",
       },
     ],
   },
@@ -151,11 +151,11 @@ export const en: Dictionary = {
     },
     mobile: {
       title: "Designed for phones",
-      body: "Most visitors arrive on a phone, so every page is designed for the small screen first.",
+      body: "Most visitors arrive on a phone, so we design every page for the small screen first.",
     },
     person: {
       title: "Direct contact",
-      body: "Throughout the project you work with one person, who also does the work.",
+      body: "Throughout the project you have one contact person who knows your project from start to finish.",
       call: "Call",
       role: "Founder of Lehesepp",
       reply: "Replies within 24 hours",
@@ -174,8 +174,8 @@ export const en: Dictionary = {
   about: {
     title: "Robert, founder of Lehesepp",
     body: [
-      "I am a web developer building websites for businesses in Estonia, using the same technology large companies use for theirs.",
-      "I carry each project from start to finish myself and reply to every enquiry within 24 hours.",
+      "Lehesepp builds websites for businesses in Estonia, using the same technology large companies use for theirs.",
+      "Each project is led by one person from start to finish, and we reply to every enquiry within 24 hours.",
     ],
     facts: ["Reply within 24 hours", "Serving all of Estonia", "Modern technology"],
     photoAlt: "Robert, founder of Lehesepp",
@@ -185,23 +185,23 @@ export const en: Dictionary = {
     items: [
       {
         q: "How much does a website cost?",
-        a: "Every project is different, so each business receives its own quote. The quote is free and carries no obligation. Because the preview is ready before payment, you only pay for a result you have seen.",
+        a: "Every project is different, so we prepare a separate quote for each business. The quote is free and carries no obligation. Because the preview is ready before payment, you only pay for a result you have already seen.",
       },
       {
         q: "How long does it take?",
         a: "From the first conversation to going live takes two weeks at most, and usually less.",
       },
       {
-        q: "What about the domain and hosting?",
-        a: "If you already have a domain, we use it. If not, I help you choose and register one. I arrange the hosting, and the domain is always registered in your name.",
+        q: "What about the domain?",
+        a: "If you already have a domain, we use it. If not, we help you choose and register one.",
       },
       {
         q: "Will my business appear on Google?",
-        a: "The site is built to meet Google's technical requirements: titles, descriptions, speed and location data. I also create or update your Google Business profile so the business appears on the map. No one can guarantee a ranking, but the foundations will be solid.",
+        a: "The site is built following Google's recommendations: titles, descriptions, speed and location data. We also create or update your Google Business profile so your business can be found on the map. No one can guarantee a top ranking, but the foundations will be in place.",
       },
       {
         q: "What happens after launch?",
-        a: "You can manage the site yourself or join the monthly care plan, which covers hosting, updates, backups and minor changes.",
+        a: "You can manage the site yourself or choose the monthly care plan, which covers hosting, updates, backups and minor changes.",
       },
     ],
   },
@@ -236,11 +236,11 @@ export const en: Dictionary = {
         required: "This field is required.",
         email: "Please check the email address.",
         needs: "Choose at least one.",
-        submit: "The request could not be sent. Please try again or email me directly.",
+        submit: "The request could not be sent. Please try again or email us directly.",
       },
       success: {
-        title: "Thank you. Your request has been received.",
-        body: "I will reply within 24 hours. For urgent matters, please call.",
+        title: "Thank you. Your request has reached us.",
+        body: "We will reply within 24 hours. For urgent matters, please call.",
         again: "Send another request",
       },
     },
@@ -256,7 +256,7 @@ export const en: Dictionary = {
   },
   consent: {
     title: "Cookies",
-    body: "I use Google Ads cookies to measure whether ads lead to enquiries. They are not loaded without your consent.",
+    body: "We use Google Ads cookies to measure whether ads lead to enquiries. They are not loaded without your consent.",
     accept: "Accept",
     reject: "Decline",
     privacy: "Privacy policy",
@@ -269,13 +269,13 @@ export const en: Dictionary = {
       {
         h: "Data controller",
         p: [
-          "The controller of personal data is {founder} ({name}). For questions about data protection, write to {email}.",
+          "The controller of personal data is Robert Kuura ({name}). For questions about data protection, write to {email}.",
         ],
       },
       {
         h: "Data collected",
         p: [
-          "When you submit the quote form, I receive your business name, your name, email address, phone number, business type, current website address and message. When you write or call directly, I receive the information you choose to share.",
+          "When you submit the quote form, we receive your business name, your name, email address, phone number, business type, current website address and message. When you write or call us directly, we receive the information you choose to share.",
           "Visit statistics are collected with Umami, which uses no cookies and does not store IP addresses. The statistics show only totals, such as how many times a page was viewed and where visitors came from, and cannot identify an individual person.",
           "If you give consent, the site uses Google Ads cookies to measure whether a visitor who came from an ad sent an enquiry. Without consent these cookies are not loaded. You can withdraw consent at any time with the “Cookie settings” link in the footer.",
         ],
@@ -285,38 +285,38 @@ export const en: Dictionary = {
         p: [
           "Data is used only to respond to your enquiry, prepare a quote and, if we work together, perform the contract. The legal basis is pre-contractual steps and the contract (GDPR Art. 6(1)(b)).",
           "The legal basis for ad measurement is your consent (GDPR Art. 6(1)(a)).",
-          "The legal basis for visit statistics is my legitimate interest in knowing how the site is used (GDPR Art. 6(1)(f)).",
+          "The legal basis for visit statistics is our legitimate interest in knowing how the site is used (GDPR Art. 6(1)(f)).",
           "Data is never sold or shared with third parties for marketing purposes.",
         ],
       },
       {
         h: "Processors",
         p: [
-          "The site is hosted on GitHub Pages (GitHub, Inc.), which logs visitors' IP addresses for security purposes. Form requests are delivered through the email service Formspree (Formspree, Inc.). Visit statistics are processed by Umami Software, Inc. With your consent, ad measurement data is processed by Google Ireland Limited. These providers process data only on my instructions.",
+          "The site is hosted on GitHub Pages (GitHub, Inc.), which logs visitors' IP addresses for security purposes. Form requests are delivered through the email service Formspree (Formspree, Inc.). Visit statistics are processed by Umami Software, Inc. With your consent, ad measurement data is processed by Google Ireland Limited. These providers process data only on our instructions.",
         ],
       },
       {
         h: "Retention",
         p: [
-          "Enquiries are kept for up to 12 months if no work follows. Under a contract, data is kept for as long as the law requires (for example 7 years for accounting records).",
+          "Enquiries are kept for up to 12 months if no work follows. Once a contract is signed, data is kept for as long as the law requires (for example 7 years for accounting records).",
         ],
       },
       {
         h: "Your rights",
         p: [
-          "You have the right to access the data held about you, request its correction or deletion, and restrict its processing. Write to {email}. If you believe your rights have been violated, you may contact the Estonian Data Protection Inspectorate (www.aki.ee).",
+          "You have the right to access the data held about you, request its correction or deletion, and restrict its processing. To do so, write to {email}. If you believe your rights have been violated, you may contact the Estonian Data Protection Inspectorate (www.aki.ee).",
         ],
       },
     ],
   },
   preview: {
     greeting: "Hello, {business}.",
-    intro: "I have prepared a preview of your new website. It can also be viewed on a phone.",
+    intro: "We have prepared a preview of your new website. It can also be viewed on a phone.",
     open: "Open the preview",
     frameTitle: "Preview of the {business} website",
     pay: "You pay only if the site is right.",
     next: "Does the preview meet your expectations?",
-    nextBody: "Call or write. I will make the necessary changes and we can launch the site.",
+    nextBody: "Call or write to us. We will make the necessary changes and launch the site.",
     call: "Call",
     write: "Write",
     from: "Robert, Lehesepp",

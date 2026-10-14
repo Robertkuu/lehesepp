@@ -25,25 +25,25 @@ export const industries: Industry[] = [
     label: "Kohvikud ja restoranid",
     metaTitle: "Kodulehe tegemine kohvikule ja restoranile",
     metaDescription:
-      "Kodulehe tegemine kohvikule ja restoranile: menüü, lahtiolekuajad, lauabroneering ja asukoht kaardil. Valmis lehte näed enne, kui maksad.",
+      "Kodulehe tegemine kohvikule ja restoranile: menüü, lahtiolekuajad, lauabroneering ja asukoht kaardil. Valmis lehte näete enne, kui maksate.",
     title: "Koduleht kohvikule ja restoranile",
-    lead: "Külastaja tahab teada kolme asja: mida pakute, millal olete avatud ja kuidas lauda broneerida. Teen kodulehe, kus need on kohe näha ja töötavad hästi telefonis.",
+    lead: "Külastaja tahab teada kolme asja: mida pakute, millal olete avatud ja kuidas lauda broneerida. Teeme kodulehe, kus see kõik on kohe näha ja mis töötab hästi telefonis.",
     features: [
       {
         title: "Menüü, mida saab telefonis lugeda",
-        body: "Menüü on lehel tekstina, mitte PDF-i või pildina. Seda on telefonis mugav lugeda ja Google saab selle sisu lugeda.",
+        body: "Menüü on lehel tekstina, mitte PDF-i või pildina. Nii on seda telefonis mugav lugeda ja ka Google näeb menüü sisu.",
       },
       {
         title: "Lahtiolekuajad ja asukoht",
-        body: "Lahtiolekuajad, aadress ja kaart on kohe nähtavad, koos nupuga, mis avab telefonis teejuhised.",
+        body: "Lahtiolekuajad, aadress ja kaart on kohe näha. Üks puudutus avab telefonis teejuhised.",
       },
       {
         title: "Lauabroneering",
-        body: "Broneerimisnupp viib sinu olemasolevasse broneerimissüsteemi või helistab otse. Kui süsteemi pole, lisan lihtsa broneerimispäringu vormi.",
+        body: "Broneerimisnupp viib teie olemasolevasse broneerimissüsteemi või alustab kõnet. Kui süsteemi ei ole, lisame lihtsa broneerimisvormi.",
       },
       {
         title: "Fotod, mis tekitavad isu",
-        body: "Toidu- ja interjöörifotod laaditakse kiiresti ka aeglase mobiilsideühenduse korral, nii et leht ei jää pilte ootama.",
+        body: "Toidu- ja interjöörifotod avanevad kiiresti ka aeglase mobiilsideühenduse korral.",
       },
     ],
   },
@@ -53,21 +53,21 @@ export const industries: Industry[] = [
     label: "Ilusalongid ja juuksurid",
     metaTitle: "Kodulehe tegemine ilusalongile ja juuksurile",
     metaDescription:
-      "Kodulehe tegemine ilusalongile, juuksurile ja küünesalongile: teenused, hinnakiri, aja broneerimine ja tööde galerii. Valmis lehte näed enne, kui maksad.",
+      "Kodulehe tegemine ilusalongile, juuksurile ja küünesalongile: teenused, hinnakiri, aja broneerimine ja tööde galerii. Valmis lehte näete enne, kui maksate.",
     title: "Koduleht ilusalongile ja juuksurile",
-    lead: "Uus klient tahab näha teenuseid, hindu ja seda, kuidas aega broneerida. Teen kodulehe, kus aja broneerimiseks piisab ühest puudutusest.",
+    lead: "Uus klient tahab näha teenuseid, hindu ja seda, kuidas aega broneerida. Teeme kodulehe, kus aja broneerimiseks piisab ühest puudutusest.",
     features: [
       {
         title: "Teenused ja hinnakiri",
-        body: "Teenused on rühmitatud koos kestuse ja hinnaga, et klient teaks enne broneerimist, mida oodata.",
+        body: "Teenused on rühmade kaupa koos kestuse ja hinnaga, nii et klient teab juba enne broneerimist, mida oodata.",
       },
       {
         title: "Aja broneerimine",
-        body: "Broneerimisnupp on alati käepärast ja viib sinu kasutatavasse broneerimissüsteemi, näiteks Freshasse või Booksysse.",
+        body: "Broneerimisnupp on alati käepärast ja viib teie kasutatavasse broneerimissüsteemi, näiteks Freshasse või Booksysse.",
       },
       {
         title: "Tööde galerii",
-        body: "Tööde näited ning enne ja pärast pildid näitavad sinu käekirja paremini kui ükski tekst.",
+        body: "Tööde näited ja võrdlusfotod enne ja pärast näitavad teie käekirja paremini kui ükski tekst.",
       },
       {
         title: "Meistrite tutvustus",
@@ -81,9 +81,9 @@ export const industries: Industry[] = [
     label: "Autoremont ja rehvitööd",
     metaTitle: "Kodulehe tegemine autoremondile ja rehvitöökojale",
     metaDescription:
-      "Kodulehe tegemine autoremondile ja rehvitöökojale: teenused, hooldusaja broneerimine, lahtiolekuajad ja asukoht. Valmis lehte näed enne, kui maksad.",
+      "Kodulehe tegemine autoremondile ja rehvitöökojale: teenused, hooldusaja broneerimine, lahtiolekuajad ja asukoht. Valmis lehte näete enne, kui maksate.",
     title: "Koduleht autoremondile ja rehvitöökojale",
-    lead: "Lähimat töökoda otsitakse telefonist. Teen kodulehe, kus teenused ja lahtiolekuajad on kohe näha ning helistada või aega broneerida saab ühe puudutusega.",
+    lead: "Lähimat töökoda otsitakse telefonist. Teeme kodulehe, kus teenused ja lahtiolekuajad on kohe näha ning helistada või aega broneerida saab ühe puudutusega.",
     features: [
       {
         title: "Teenuste ülevaade",
@@ -99,7 +99,7 @@ export const industries: Industry[] = [
       },
       {
         title: "Asukoht ja lahtiolekuajad",
-        body: "Aadress, kaart ja lahtiolekuajad on kohe nähtavad, koos nupuga, mis avab telefonis teejuhised.",
+        body: "Aadress, kaart ja lahtiolekuajad on kohe näha. Üks puudutus avab telefonis teejuhised.",
       },
     ],
   },
@@ -109,13 +109,13 @@ export const industries: Industry[] = [
     label: "Ehitus ja remont",
     metaTitle: "Kodulehe tegemine ehitusettevõttele",
     metaDescription:
-      "Kodulehe tegemine ehitus- ja remondiettevõttele: tehtud tööde galerii, teenused, hinnapäringu vorm ja kontaktid. Valmis lehte näed enne, kui maksad.",
+      "Kodulehe tegemine ehitus- ja remondiettevõttele: tehtud tööde galerii, teenused, hinnapäringu vorm ja kontaktid. Valmis lehte näete enne, kui maksate.",
     title: "Koduleht ehitusettevõttele",
-    lead: "Ehitustööd tellitakse usalduse põhjal. Teen kodulehe, mis näitab tehtud töid, selgitab teenuseid ja laseb kliendil oma projekti lihtsalt kirjeldada.",
+    lead: "Ehitustöid tellitakse usalduse põhjal. Teeme kodulehe, mis näitab tehtud töid, selgitab teenuseid ja laseb kliendil oma projekti lihtsalt kirjeldada.",
     features: [
       {
         title: "Tehtud tööde galerii",
-        body: "Objektid koos fotode ja lühikirjeldusega näitavad, mida oskad, ning annavad kliendile julguse ühendust võtta.",
+        body: "Fotod ja lühikirjeldused tehtud objektidest näitavad, mida oskate, ning julgustavad klienti ühendust võtma.",
       },
       {
         title: "Teenused selgelt lahti kirjutatud",
@@ -123,11 +123,11 @@ export const industries: Industry[] = [
       },
       {
         title: "Hinnapäringu vorm",
-        body: "Klient kirjeldab oma projekti, mõõte ja asukohta. Sina saad päringu, millele on lihtne vastata.",
+        body: "Klient kirjeldab oma projekti, mõõte ja asukohta. Teie saate päringu, millele on lihtne vastata.",
       },
       {
         title: "Tööpiirkond",
-        body: "Lehel on selgelt kirjas, kus töötate, et päringud tuleksid sealt, kus sul on mugav töid teha.",
+        body: "Lehel on selgelt kirjas, kus te töötate, nii et päringud tulevad piirkonnast, kus teil on mugav töid teha.",
       },
     ],
   },
