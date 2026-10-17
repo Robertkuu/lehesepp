@@ -31,7 +31,7 @@ npm run dev
 - [x] Production domain https://lehesepp.ee (override with `NEXT_PUBLIC_SITE_URL`)
 - [x] Confirm the timeline answer in the FAQ
 - [x] Remove the example prospect from `src/content/previews.ts`
-- [ ] Umami website ID in `umami.websiteId` in `src/lib/site.ts` (visit statistics)
+- [x] Umami website ID in `umami.websiteId` in `src/lib/site.ts` (visit statistics)
 
 ## Deploy
 
