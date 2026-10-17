@@ -20,8 +20,9 @@ export function Header({
   const home = routes.home[locale];
   const anchor = (id: string) => (route === "home" ? `#${id}` : `${home}#${id}`);
   const links = [
-    { href: anchor("teenused"), label: dict.nav.services },
     { href: anchor("protsess"), label: dict.nav.process },
+    { href: anchor("hinnad"), label: dict.nav.pricing },
+    { href: anchor("naidised"), label: dict.nav.samples },
     { href: anchor("kkk"), label: dict.nav.faq },
   ];
   const other = otherLocale(locale);

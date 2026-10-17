@@ -53,7 +53,7 @@ function Cafe({ name, t, intro, priority }: Props) {
           <div className="flex min-h-0 flex-col justify-end">
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8c3b22]">{t.info}</p>
             <p
-              className={cx(d(2).className, "mt-2 line-clamp-2 break-words font-[family-name:var(--font-cafe)] text-[clamp(2.1rem,10cqw,4.6rem)] font-semibold leading-[0.92] pb-[0.12em]")}
+              className={cx(d(2).className, "mt-2 line-clamp-2 shrink-0 break-words font-[family-name:var(--font-cafe)] text-[clamp(2.1rem,10cqw,4.6rem)] font-semibold leading-[0.92] pb-[0.12em]")}
               style={d(2).style}
             >
               {name}
@@ -105,7 +105,7 @@ function Salon({ name, t, intro }: Props) {
           <div className="flex flex-col justify-center">
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#7f3350]">{t.info}</p>
             <p
-              className={cx(d(2).className, "mt-2 line-clamp-3 break-words font-[family-name:var(--font-salon)] text-[clamp(1.6rem,8cqw,3.6rem)] leading-[1] pb-[0.12em]")}
+              className={cx(d(2).className, "mt-2 line-clamp-3 shrink-0 break-words font-[family-name:var(--font-salon)] text-[clamp(1.6rem,8cqw,3.6rem)] leading-[1] pb-[0.12em]")}
               style={d(2).style}
             >
               {name}
@@ -158,7 +158,7 @@ function Auto({ name, t, intro }: Props) {
           </header>
           <div className="mt-auto max-w-[34rem]">
             <p
-              className={cx(d(2).className, "line-clamp-3 break-words font-[family-name:var(--font-auto)] text-[clamp(2.4rem,10cqw,5rem)] font-extrabold uppercase leading-[0.86] pb-[0.12em]")}
+              className={cx(d(2).className, "line-clamp-3 shrink-0 break-words font-[family-name:var(--font-auto)] text-[clamp(2.4rem,10cqw,5rem)] font-extrabold uppercase leading-[0.86] pb-[0.12em]")}
               style={d(2).style}
             >
               {name}
@@ -199,7 +199,7 @@ function Build({ name, t, intro }: Props) {
           </nav>
         </header>
         <p
-          className={cx(d(2).className, wide, "mt-4 line-clamp-2 break-words text-[clamp(1.6rem,7.4cqw,3.4rem)] font-extrabold uppercase leading-[0.92] pb-[0.12em]")}
+          className={cx(d(2).className, wide, "mt-4 line-clamp-2 shrink-0 break-words text-[clamp(1.6rem,7.4cqw,3.4rem)] font-extrabold uppercase leading-[0.92] pb-[0.12em]")}
           style={d(2).style}
         >
           {name}
@@ -258,7 +258,7 @@ function General({ name, t, intro }: Props) {
               {t.info}
             </span>
             <p
-              className={cx(d(2).className, "mt-3 line-clamp-2 break-words text-[clamp(1.9rem,8.5cqw,3.8rem)] font-semibold leading-[1] tracking-[-0.035em] pb-[0.1em]")}
+              className={cx(d(2).className, "mt-3 line-clamp-2 shrink-0 break-words text-[clamp(1.9rem,8.5cqw,3.8rem)] font-semibold leading-[1] tracking-[-0.035em] pb-[0.1em]")}
               style={d(2).style}
             >
               {name}

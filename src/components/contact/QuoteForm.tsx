@@ -2,17 +2,18 @@
 
 import { useId, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { AnimatePresence, m, useReducedMotion } from "motion/react";
-import { CheckIcon, CaretDownIcon, SpinnerGapIcon } from "@phosphor-icons/react/dist/ssr";
+import { CheckIcon, SpinnerGapIcon } from "@phosphor-icons/react/dist/ssr";
 import type { Dictionary } from "@/i18n";
-import { submitQuote } from "@/lib/submitQuote";
+import { EMAIL, submitQuote } from "@/lib/submitQuote";
 import { trackLead } from "@/lib/ads";
 import { trackEvent } from "@/lib/analytics";
 
 type Form = Dictionary["contact"]["form"];
-type Field = "businessName" | "contactName" | "email" | "needs";
+type Field = "name" | "contact" | "message";
 type Errors = Partial<Record<Field, string>>;
 
-const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+// A phone number: digits with optional +, spaces, dashes or brackets, at least 7 digits.
+const PHONE = /^\+?[\d\s()-]+$/;
 
 const inputCls =
   "h-12 w-full rounded-[var(--radius-frame)] border border-line-strong bg-paper px-3.5 text-base text-ink placeholder:text-ink-2/80 transition-[border-color,box-shadow] duration-150 hover:border-ink focus-visible:border-ink focus-visible:outline-offset-1 aria-[invalid=true]:border-danger";
@@ -27,12 +28,11 @@ export function QuoteForm({ form, locale, privacyHref }: { form: Form; locale: s
 
   function validate(fd: FormData): Errors {
     const e: Errors = {};
-    if (!String(fd.get("businessName") ?? "").trim()) e.businessName = form.errors.required;
-    if (!String(fd.get("contactName") ?? "").trim()) e.contactName = form.errors.required;
-    const email = String(fd.get("email") ?? "").trim();
-    if (!email) e.email = form.errors.required;
-    else if (!EMAIL.test(email)) e.email = form.errors.email;
-    if (fd.getAll("needs").length === 0) e.needs = form.errors.needs;
+    if (!String(fd.get("name") ?? "").trim()) e.name = form.errors.required;
+    const contact = String(fd.get("contact") ?? "").trim();
+    if (!contact) e.contact = form.errors.required;
+    else if (!EMAIL.test(contact) && !(PHONE.test(contact) && contact.replace(/\D/g, "").length >= 7)) e.contact = form.errors.contact;
+    if (!String(fd.get("message") ?? "").trim()) e.message = form.errors.required;
     return e;
   }
 
@@ -46,21 +46,16 @@ export function QuoteForm({ form, locale, privacyHref }: { form: Form; locale: s
     setErrors(e);
     const first = Object.keys(e)[0] as Field | undefined;
     if (first) {
-      const target = el.querySelector<HTMLElement>(first === "needs" ? `[name="needs"]` : `[name="${first}"]`);
+      const target = el.querySelector<HTMLElement>(`[name="${first}"]`);
       target?.focus();
       return;
     }
     setStatus("sending");
     try {
       await submitQuote({
-        businessName: String(fd.get("businessName")).trim(),
-        contactName: String(fd.get("contactName")).trim(),
-        email: String(fd.get("email")).trim(),
-        phone: String(fd.get("phone") ?? "").trim(),
-        businessType: String(fd.get("businessType") ?? ""),
-        currentSite: String(fd.get("currentSite") ?? "").trim(),
-        needs: fd.getAll("needs").map(String),
-        message: String(fd.get("message") ?? "").trim(),
+        name: String(fd.get("name")).trim(),
+        contact: String(fd.get("contact")).trim(),
+        message: String(fd.get("message")).trim(),
         locale,
       });
       setStatus("sent");
@@ -128,77 +123,30 @@ export function QuoteForm({ form, locale, privacyHref }: { form: Form; locale: s
             className="grid gap-5"
           >
             <div className="grid gap-5 sm:grid-cols-2">
-              <TextField id={`${id}-bn`} name="businessName" label={form.businessName} error={errors.businessName} autoComplete="organization" required />
-              <TextField id={`${id}-cn`} name="contactName" label={form.contactName} error={errors.contactName} autoComplete="name" required />
-              <TextField id={`${id}-em`} name="email" type="email" label={form.email} error={errors.email} autoComplete="email" inputMode="email" required />
-              <TextField id={`${id}-ph`} name="phone" type="tel" label={form.phone} autoComplete="tel" inputMode="tel" />
-              <div className="grid gap-2">
-                <label htmlFor={`${id}-bt`} className="text-sm font-medium">
-                  {form.businessType}
-                </label>
-                <div className="relative">
-                  <select id={`${id}-bt`} name="businessType" defaultValue="" className={`${inputCls} appearance-none pr-10`}>
-                    <option value="" disabled>
-                      {form.businessTypePlaceholder}
-                    </option>
-                    {form.businessTypes.map((t) => (
-                      <option key={t} value={t}>
-                        {t}
-                      </option>
-                    ))}
-                  </select>
-                  <CaretDownIcon size={18} weight="bold" aria-hidden="true" className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-ink-2" />
-                </div>
-              </div>
-              <TextField
-                id={`${id}-cs`}
-                name="currentSite"
-                type="url"
-                label={
-                  <>
-                    {form.currentSite} <span className="font-normal text-ink-2">({form.optional})</span>
-                  </>
-                }
-                placeholder={form.currentSitePlaceholder}
-                autoComplete="url"
-                inputMode="url"
-              />
+              <TextField id={`${id}-nm`} name="name" label={form.name} error={errors.name} autoComplete="name" required />
+              <TextField id={`${id}-ct`} name="contact" label={form.contact} hint={form.contactHint} error={errors.contact} autoComplete="email" required />
             </div>
 
-            <fieldset aria-describedby={errors.needs ? `${id}-needs-err` : undefined} aria-invalid={errors.needs ? true : undefined}>
-              <legend className="mb-2 text-sm font-medium">
-                {form.needs}
-                <span aria-hidden="true" className="text-leaf-ink"> *</span>
-              </legend>
-              <div className="flex flex-wrap gap-2">
-                {form.needsOptions.map((n) => (
-                  <label key={n} className="press relative cursor-pointer">
-                    <input type="checkbox" name="needs" value={n} className="peer sr-only" />
-                    <span className="flex h-11 items-center gap-2 rounded-[var(--radius-frame)] border border-line-strong px-3.5 text-sm font-medium text-ink-2 transition-colors duration-150 hover:border-ink hover:text-ink peer-checked:border-leaf peer-checked:bg-leaf peer-checked:text-on-leaf peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-[var(--focus)]">
-                      <CheckIcon size={16} weight="bold" aria-hidden="true" className="hidden [label:has(:checked)_&]:inline" />
-                      {n}
-                    </span>
-                  </label>
-                ))}
-              </div>
-              {errors.needs && (
-                <p id={`${id}-needs-err`} className="mt-2 text-sm font-medium text-danger">
-                  {errors.needs}
-                </p>
-              )}
-            </fieldset>
-
             <div className="grid gap-2">
-              <label htmlFor={`${id}-msg`} className="text-sm font-medium">
+              <label htmlFor={`${id}-msg`} className="text-base font-medium">
                 {form.message}
+                <span aria-hidden="true" className="text-leaf-ink"> *</span>
               </label>
               <textarea
                 id={`${id}-msg`}
                 name="message"
                 rows={4}
                 placeholder={form.messagePlaceholder}
-                className={`${inputCls} h-auto min-h-[120px] resize-y py-3 leading-relaxed`}
+                aria-required
+                aria-invalid={errors.message ? true : undefined}
+                aria-describedby={errors.message ? `${id}-msg-err` : undefined}
+                className={`${inputCls} h-auto min-h-[130px] resize-y py-3 leading-relaxed`}
               />
+              {errors.message && (
+                <p id={`${id}-msg-err`} className="text-sm font-medium text-danger">
+                  {errors.message}
+                </p>
+              )}
             </div>
 
             {/* Honeypot: hidden from people, tempting for bots. */}
@@ -226,7 +174,7 @@ export function QuoteForm({ form, locale, privacyHref }: { form: Form; locale: s
                 type="submit"
                 disabled={status === "sending"}
                 aria-busy={status === "sending"}
-                className="press inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-[var(--radius-frame)] bg-leaf px-6 text-[15px] font-semibold text-on-leaf hover:bg-leaf-hover disabled:cursor-progress"
+                className="press inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-[var(--radius-frame)] bg-leaf px-6 text-base font-semibold text-on-leaf hover:bg-leaf-hover disabled:cursor-progress"
               >
                 {status === "sending" && <SpinnerGapIcon size={18} weight="bold" aria-hidden="true" className="animate-spin" />}
                 {status === "sending" ? form.sending : form.submit}
@@ -244,6 +192,7 @@ function TextField({
   name,
   label,
   error,
+  hint,
   type = "text",
   required,
   ...rest
@@ -252,6 +201,7 @@ function TextField({
   name: string;
   label: ReactNode;
   error?: string;
+  hint?: string;
   type?: string;
   required?: boolean;
   placeholder?: string;
@@ -260,7 +210,7 @@ function TextField({
 }) {
   return (
     <div className="grid content-start gap-2">
-      <label htmlFor={id} className="text-sm font-medium">
+      <label htmlFor={id} className="text-base font-medium">
         {label}
         {required && (
           <span aria-hidden="true" className="text-leaf-ink">
@@ -275,10 +225,15 @@ function TextField({
         type={type}
         aria-required={required || undefined}
         aria-invalid={error ? true : undefined}
-        aria-describedby={error ? `${id}-err` : undefined}
+        aria-describedby={[hint && `${id}-hint`, error && `${id}-err`].filter(Boolean).join(" ") || undefined}
         className={inputCls}
         {...rest}
       />
+      {hint && (
+        <p id={`${id}-hint`} className="text-sm text-ink-2">
+          {hint}
+        </p>
+      )}
       {error && (
         <p id={`${id}-err`} className="text-sm font-medium text-danger">
           {error}

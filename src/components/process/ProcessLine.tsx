@@ -2,10 +2,13 @@
 
 import { useRef, useState } from "react";
 import { m, useMotionValueEvent, useReducedMotion, useScroll, useSpring, useTransform } from "motion/react";
+import { ChatsCircleIcon, CheckCircleIcon, PencilRulerIcon } from "@phosphor-icons/react/dist/ssr";
+
+const icons = [ChatsCircleIcon, PencilRulerIcon, CheckCircleIcon];
 
 type Step = { title: string; body: string };
 
-/** Four steps on one unbroken line. A single marker travels the line as the
+/** Three steps on one unbroken line. A single marker travels the line as the
  *  section scrolls past; steps it has reached switch from pencil to ink. */
 export function ProcessLine({ steps }: { steps: Step[] }) {
   const ref = useRef<HTMLOListElement>(null);
@@ -28,16 +31,18 @@ export function ProcessLine({ steps }: { steps: Step[] }) {
       <div className="process-track" aria-hidden="true">
         <m.div className="process-fill" style={{ "--fill": fill } as React.CSSProperties} />
       </div>
-      <ol ref={ref} className="grid gap-10 lg:grid-cols-4 lg:gap-8">
+      <ol ref={ref} className="grid gap-10 lg:grid-cols-3 lg:gap-8">
       {steps.map((step, i) => {
         const on = i < reached;
+        const Icon = icons[i];
         return (
           <li key={step.title} className="relative" data-on={on}>
             <span className="process-node" aria-hidden="true" />
+            {Icon && <Icon size={36} weight="duotone" aria-hidden="true" className="mb-3 text-leaf-ink" />}
             <h3 className="font-display text-2xl font-bold leading-tight tracking-[-0.02em] transition-colors duration-300 sm:text-[1.75rem]">
-              {step.title}
+              <span className="text-leaf-ink">{i + 1}.</span> {step.title}
             </h3>
-            <p className="mt-3 max-w-[34ch] text-base leading-relaxed text-ink-2 text-pretty">{step.body}</p>
+            <p className="mt-3 max-w-[36ch] text-base leading-relaxed text-ink-2 sm:text-lg text-pretty">{step.body}</p>
           </li>
         );
       })}

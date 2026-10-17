@@ -1,6 +1,7 @@
 import { absoluteUrl, siteUrl, routes, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n";
 import { site } from "@/lib/site";
+import { packages, prices, type PackageKey } from "@/content/pricing";
 
 export function JsonLd({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
@@ -23,8 +24,13 @@ export function JsonLd({ locale }: { locale: Locale }) {
         areaServed: { "@type": "Country", name: "Estonia" },
         address: { "@type": "PostalAddress", addressCountry: "EE" },
         knowsLanguage: ["et", "en"],
-        priceRange: "Project-based quote",
-        makesOffer: dict.services.items.map((s) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: s.title } })),
+        makesOffer: (Object.keys(prices) as PackageKey[]).map((key) => ({
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name: packages[locale][key].name },
+          ...(prices[key] !== null && {
+            priceSpecification: { "@type": "PriceSpecification", minPrice: prices[key], priceCurrency: "EUR" },
+          }),
+        })),
       },
       {
         "@type": "WebSite",

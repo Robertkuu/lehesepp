@@ -14,7 +14,7 @@ export function Contact({ dict, locale }: { dict: Dictionary; locale: Locale }) 
   return (
     <section id="kontakt" aria-labelledby="kontakt-title" className="bg-paper-2">
       <div className="mx-auto grid max-w-[1400px] gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20 lg:px-10 lg:py-32">
-        <div className="flex flex-col gap-8">
+        <div className="flex min-w-0 flex-col gap-8">
           <div>
             <h2 id="kontakt-title" className="font-display text-[clamp(2.5rem,6.4vw,5rem)] font-extrabold leading-[0.95] tracking-[-0.038em] text-balance">
               {c.title}

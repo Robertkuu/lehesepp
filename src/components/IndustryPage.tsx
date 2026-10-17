@@ -9,9 +9,10 @@ import { Footer } from "@/components/layout/Footer";
 import { ButtonLink } from "@/components/ui/Button";
 import { DraftFrame } from "@/components/hero/DraftFrame";
 import { InView } from "@/components/motion/InView";
-import { Offer } from "@/components/sections/Offer";
+import { Pricing } from "@/components/sections/Pricing";
 import { Process } from "@/components/sections/Process";
 import { Contact } from "@/components/sections/Contact";
+import { formatPrice, fromPrice } from "@/content/pricing";
 
 function IndustryJsonLd({ industry }: { industry: Industry }) {
   const url = absoluteUrl(industryPath(industry.slug));
@@ -66,15 +67,17 @@ export function IndustryPage({ industry }: { industry: Industry }) {
                 {industry.title}
               </h1>
               <p className="max-w-[40ch] text-lg leading-relaxed text-ink-2 sm:text-xl text-pretty">{industry.lead}</p>
-              <p className="text-base font-semibold text-leaf-ink">{dict.offer.titleB}</p>
+              <p className="text-lg font-semibold text-leaf-ink">
+                {dict.hero.from} {formatPrice(fromPrice)} · {dict.pricing.payLater}
+              </p>
               <div className="flex flex-wrap gap-3">
-                <ButtonLink href="#kontakt">
+                <ButtonLink href="#hinnad">
                   {dict.hero.cta}
-                  <ArrowRightIcon size={18} weight="bold" aria-hidden="true" />
-                </ButtonLink>
-                <ButtonLink href="#protsess" variant="secondary">
-                  {dict.hero.secondary}
                   <ArrowDownIcon size={18} weight="bold" aria-hidden="true" />
+                </ButtonLink>
+                <ButtonLink href="#kontakt" variant="secondary">
+                  {dict.nav.cta}
+                  <ArrowRightIcon size={18} weight="bold" aria-hidden="true" />
                 </ButtonLink>
               </div>
             </div>
@@ -102,8 +105,8 @@ export function IndustryPage({ industry }: { industry: Industry }) {
           </InView>
         </section>
 
-        <Offer dict={dict} compare={false} />
         <Process dict={dict} />
+        <Pricing dict={dict} locale="et" />
         <Contact dict={dict} locale="et" />
 
         <nav aria-labelledby="valdkonnad-title" className="mx-auto max-w-[1400px] px-4 py-14 sm:px-6 lg:px-10">

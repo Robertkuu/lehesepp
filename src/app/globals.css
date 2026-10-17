@@ -6,9 +6,9 @@
   --paper-2: #e6eae3;
   --paper-3: #dce2d8;
   --ink: #0e1510;
-  --ink-2: #4a544c;
+  --ink-2: #3b453d;
   --line: rgb(14 21 16 / 0.14);
-  --line-strong: rgb(14 21 16 / 0.32);
+  --line-strong: rgb(14 21 16 / 0.4);
   --leaf: #34b85a;
   --leaf-hover: #2ea551;
   --leaf-ink: #17703a;
@@ -25,9 +25,9 @@
     --paper-2: #131a15;
     --paper-3: #1a231d;
     --ink: #e8ece5;
-    --ink-2: #a3aea5;
+    --ink-2: #bcc6be;
     --line: rgb(232 236 229 / 0.12);
-    --line-strong: rgb(232 236 229 / 0.3);
+    --line-strong: rgb(232 236 229 / 0.38);
     --leaf: #45c46b;
     --leaf-hover: #55cf79;
     --leaf-ink: #6fd88e;
@@ -61,6 +61,8 @@
 }
 
 html {
+  /* 18px base, still scaled by the visitor's own browser text size. */
+  font-size: 112.5%;
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
   scroll-padding-top: 5rem;
@@ -133,48 +135,6 @@ html {
   scrollbar-color: var(--line-strong) var(--paper);
 }
 
-/* ---------- Hero draft frame ---------- */
-/* Crop marks at the frame corners: this is a sheet being drafted. */
-.crop {
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  pointer-events: none;
-}
-.crop::before,
-.crop::after {
-  content: "";
-  position: absolute;
-  background: var(--line-strong);
-}
-.crop::before {
-  width: 14px;
-  height: 1px;
-}
-.crop::after {
-  width: 1px;
-  height: 14px;
-}
-.crop-tl {
-  top: -8px;
-  left: -8px;
-}
-.crop-tr {
-  top: -8px;
-  right: -8px;
-  transform: scaleX(-1);
-}
-.crop-bl {
-  bottom: -8px;
-  left: -8px;
-  transform: scaleY(-1);
-}
-.crop-br {
-  bottom: -8px;
-  right: -8px;
-  transform: scale(-1);
-}
-
 /* First load: every block starts as a wireframe, then gets filled in. */
 @media (prefers-reduced-motion: no-preference) {
   .draft-block {
@@ -241,34 +201,6 @@ html {
   }
 }
 
-/* Comparison seam: vertical swipes keep scrolling the page. */
-.compare-frame {
-  touch-action: pan-y;
-  -webkit-tap-highlight-color: transparent;
-}
-.compare-range {
-  -webkit-appearance: none;
-  appearance: none;
-}
-.compare-range:focus-visible {
-  opacity: 1;
-  background: transparent;
-  outline: 2px solid var(--on-leaf);
-  outline-offset: 4px;
-}
-.compare-range::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 44px;
-  height: 100vh;
-  background: transparent;
-}
-.compare-range::-moz-range-thumb {
-  width: 44px;
-  height: 100vh;
-  background: transparent;
-  border: 0;
-}
-
 /* ---------- Process: one unbroken line ---------- */
 .process-track {
   position: absolute;
@@ -331,24 +263,6 @@ html {
   }
 }
 
-/* ---------- Why bento ---------- */
-@media (prefers-reduced-motion: no-preference) {
-  .bento[data-inview="hidden"] .bento-cell {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  .bento-cell {
-    transition: opacity 650ms var(--ease-out), transform 650ms var(--ease-out);
-    transition-delay: calc(var(--i) * 70ms);
-  }
-  .bento[data-inview="hidden"] .phone {
-    transform: translateY(5rem);
-  }
-  .phone {
-    transition: transform 900ms var(--ease-out) 200ms;
-  }
-}
-
 /* ---------- FAQ: native details, height animated where supported ---------- */
 .faq::details-content {
   block-size: 0;
@@ -364,17 +278,6 @@ html {
 @media (prefers-reduced-motion: reduce) {
   .faq::details-content {
     transition: none;
-  }
-}
-
-/* ---------- About photo reveal ---------- */
-@media (prefers-reduced-motion: no-preference) {
-  .about-photo {
-    transition: clip-path 800ms var(--ease-out);
-    clip-path: inset(0 0 0 0);
-  }
-  .about-photo-wrap[data-inview="hidden"] .about-photo {
-    clip-path: inset(100% 0 0 0);
   }
 }
 
