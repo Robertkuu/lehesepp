@@ -12,6 +12,7 @@ export const et = {
     description:
       `Lehesepp teeb kodulehti Eesti väikeettevõtetele alates ${from}: tekstid, fotod ja kujundus on hinnas, leht valmib 1–2 nädalaga. Maksate alles siis, kui leht sobib.`,
     ogAlt: "Lehesepp: kodulehed Eesti ettevõtetele",
+    serviceType: "Kodulehe tegemine",
   },
   nav: {
     label: "Põhimenüü",

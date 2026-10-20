@@ -9,6 +9,7 @@ export const en: Dictionary = {
     description:
       `Lehesepp builds websites for small businesses in Estonia from ${from}: texts, photos and design included, ready in 1–2 weeks. You pay only when you like the site.`,
     ogAlt: "Lehesepp: websites for businesses in Estonia",
+    serviceType: "Website design",
   },
   nav: {
     label: "Main menu",

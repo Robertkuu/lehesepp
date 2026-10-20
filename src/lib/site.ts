@@ -2,7 +2,11 @@
 
 export const site = {
   name: "Lehesepp",
-  founder: "Robert",
+  // Same name as the data controller in the privacy policy, so every source names one person.
+  founder: "Robert Kuura",
+  // TODO: legal form and registry code (FIE or OÜ), city/region, and public profiles
+  // (Facebook, LinkedIn, Teatmik/Inforegister) for sameAs. Left out until confirmed.
+  sameAs: [] as string[],
   email: "robert@lehesepp.ee",
   // International format, no spaces.
   phone: "+37258557713",

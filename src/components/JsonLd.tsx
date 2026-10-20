@@ -11,7 +11,7 @@ export function JsonLd({ locale }: { locale: Locale }) {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "ProfessionalService",
+        "@type": ["Organization", "ProfessionalService"],
         "@id": business,
         name: site.name,
         description: dict.meta.description,
@@ -24,10 +24,22 @@ export function JsonLd({ locale }: { locale: Locale }) {
         areaServed: { "@type": "Country", name: "Estonia" },
         address: { "@type": "PostalAddress", addressCountry: "EE" },
         knowsLanguage: ["et", "en"],
+        ...(site.sameAs.length > 0 && { sameAs: site.sameAs }),
         makesOffer: (Object.keys(prices) as PackageKey[]).map((key) => ({
           "@type": "Offer",
-          itemOffered: { "@type": "Service", name: packages[locale][key].name },
+          url: `${url}#hinnad`,
+          description: packages[locale][key].description,
+          areaServed: { "@type": "Country", name: "Estonia" },
+          itemOffered: {
+            "@type": "Service",
+            name: `${site.name} ${packages[locale][key].name}`,
+            serviceType: dict.meta.serviceType,
+            description: packages[locale][key].features.join("; "),
+            provider: { "@id": business },
+          },
           ...(prices[key] !== null && {
+            price: prices[key],
+            priceCurrency: "EUR",
             priceSpecification: { "@type": "PriceSpecification", minPrice: prices[key], priceCurrency: "EUR" },
           }),
         })),
