@@ -190,6 +190,7 @@ export const en: Dictionary = {
   },
   privacy: {
     title: "Privacy policy",
+    description: "What data Lehesepp collects through the quote form and visit statistics, what it is used for and how long it is kept.",
     updated: "Last updated: 13 October 2026",
     back: "Back to home",
     sections: [

@@ -192,6 +192,7 @@ export const et = {
   },
   privacy: {
     title: "Privaatsuspoliitika",
+    description: "Milliseid andmeid Lehesepp pakkumise vormi ja külastuste statistika kaudu kogub, milleks neid kasutab ja kui kaua säilitab.",
     updated: "Viimati uuendatud: 13. oktoober 2026",
     back: "Tagasi avalehele",
     sections: [

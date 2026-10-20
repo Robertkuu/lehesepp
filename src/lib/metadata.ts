@@ -8,13 +8,14 @@ export function ogImages(locale: Locale) {
   return [{ url: `/og/${locale}.png`, ...ogSize, alt: getDictionary(locale).meta.ogAlt }];
 }
 
-export function pageMetadata(locale: Locale, route: RouteKey, title?: string): Metadata {
+export function pageMetadata(locale: Locale, route: RouteKey, title?: string, description?: string): Metadata {
   const dict = getDictionary(locale);
   const path = routes[route][locale];
+  description ??= dict.meta.description;
   return {
     metadataBase: new URL(siteUrl),
     title: title ? `${title} | Lehesepp` : dict.meta.title,
-    description: dict.meta.description,
+    description,
     alternates: {
       canonical: path,
       languages: {
@@ -30,7 +31,7 @@ export function pageMetadata(locale: Locale, route: RouteKey, title?: string): M
       alternateLocale: locale === "et" ? "en_GB" : "et_EE",
       url: path,
       title: title ?? dict.meta.title,
-      description: dict.meta.description,
+      description,
       images: ogImages(locale),
     },
     twitter: { card: "summary_large_image", images: ogImages(locale) },
