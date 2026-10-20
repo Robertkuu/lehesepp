@@ -1,12 +1,16 @@
 // Eesti keel on põhikeel. Tekstid on kirjutatud eesti keeles, mitte tõlgitud.
 
+import { formatPrice, fromPrice } from "@/content/pricing";
+
+const from = formatPrice(fromPrice);
+
 export type DemoTypeKey = "cafe" | "salon" | "auto" | "build" | "general";
 
 export const et = {
   meta: {
     title: "Kodulehe tegemine ettevõtetele | Lehesepp",
     description:
-      "Kodulehe tegemine ettevõtetele üle Eesti. Kiire ja mobiilisõbralik veebileht, mille eelvaate näete tasuta enne, kui maksate.",
+      `Lehesepp teeb kodulehti Eesti väikeettevõtetele alates ${from}: tekstid, fotod ja kujundus on hinnas, leht valmib 1–2 nädalaga. Maksate alles siis, kui leht sobib.`,
     ogAlt: "Lehesepp: kodulehed Eesti ettevõtetele",
   },
   nav: {
@@ -25,7 +29,7 @@ export const et = {
   hero: {
     title: "Koduleht Teie ettevõttele",
     from: "alates",
-    sub: "Teeme kodulehti igas valdkonnas tegutsevatele ettevõtetele, nii väikestele kui ka suurematele. Kõigepealt näete eelvaadet, alles siis otsustate.",
+    sub: "Lehesepp teeb kodulehti Eesti väikeettevõtetele. Tekstid, fotod ja kujundus on hinnas ning leht on valmis 1–2 nädalaga. Kõigepealt näete eelvaadet, alles siis otsustate.",
     cta: "Vaata hindu",
     secondary: "Vaata näidiseid",
     points: ["Valmis 1–2 nädalaga", "Maksate alles siis, kui leht sobib"],
@@ -123,6 +127,26 @@ export const et = {
     title: "Korduma kippuvad küsimused",
     items: [
       {
+        q: "Kui palju koduleht maksab?",
+        a: `Põhipakett maksab alates ${from}. Hinnas on kuni 5 lehte, kontaktivorm, galerii, kaart, sotsiaalmeedia lingid, logo ja visuaalne ilme ning tekstid ja fotod. Pro paketi hind sõltub sellest, mida vajate, näiteks broneerimissüsteemist või keelte arvust. Pakkumine on tasuta.`,
+      },
+      {
+        q: "Mis vahe on Põhipaketil ja Pro paketil?",
+        a: "Põhipakett sobib, kui koduleht peab ettevõtet tutvustama ja päringuid tooma. Pro on vajalik, kui kliendid peavad saama ise aega broneerida või leht peab olema mitmes keeles. Pro paketis on ka kodulehe hooldus. Tehnilised lahendused, näiteks broneerimissüsteem, on ainult Pro paketis.",
+      },
+      {
+        q: "Kas pean enne maksma?",
+        a: "Ei. Teeme kodulehe valmis ja saadame Teile eelvaate lingi. Arve saate alles siis, kui leht sobib ja läheb avalikuks.",
+      },
+      {
+        q: "Kas teete ka e-poode?",
+        a: "Ei. Teeme ettevõtete kodulehti, mis tutvustavad teenuseid ja toovad päringuid. E-poode, kus kliendid saavad tooteid osta ja kohe maksta, me ei tee.",
+      },
+      {
+        q: "Kas teete kodulehti üle Eesti?",
+        a: "Jah. Teeme kodulehti ettevõtetele üle kogu Eesti. Esimese vestluse saab pidada telefonis ja eelvaate saadame lingina, nii et kohtuda ei ole tingimata vaja.",
+      },
+      {
         q: "Kui kaua see aega võtab?",
         a: "Tavaliselt 1–2 nädalat. Aeg hakkab jooksma esimesest vestlusest ja lõpeb, kui koduleht on internetis kõigile näha.",
       },
@@ -139,8 +163,9 @@ export const et = {
         a: "Koduleht on Teie oma. Võite selle jätta nii, nagu see on, või valida hoolduse. Hoolduse korral hoolitseme, et leht töötaks, ja teeme väiksemad muudatused Teie eest.",
       },
       {
+        // TODO: confirm domain + hosting are billed separately and add the typical yearly cost.
         q: "Mis on domeen ja hosting?",
-        a: "Domeen on Teie kodulehe aadress, näiteks kohvikmoisa.ee. Hosting on koht, kus koduleht internetis asub, et seda saaks igal ajal avada. Mõlema eest makstakse väike aastatasu. Aitame need valida ja seadistame kõik Teie eest.",
+        a: "Domeen on Teie kodulehe aadress, näiteks kohvikmoisa.ee. Hosting on koht, kus koduleht internetis asub, et seda saaks igal ajal avada. Mõlema eest makstakse eraldi väike aastatasu, mis ei kuulu paketi hinna sisse. Aitame need valida ja seadistame kõik Teie eest.",
       },
     ],
   },
@@ -175,7 +200,7 @@ export const et = {
     },
   },
   footer: {
-    tagline: "Kodulehed Eesti ettevõtetele.",
+    tagline: "Kodulehed Eesti väikeettevõtetele.",
     industries: "Valdkonnad",
     privacy: "Privaatsuspoliitika",
     rights: "Kõik õigused kaitstud.",

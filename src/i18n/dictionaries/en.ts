@@ -1,10 +1,13 @@
 import type { Dictionary } from "./et";
+import { formatPrice, fromPrice } from "@/content/pricing";
+
+const from = formatPrice(fromPrice);
 
 export const en: Dictionary = {
   meta: {
     title: "Website design for businesses in Estonia | Lehesepp",
     description:
-      "Website design for businesses across Estonia. A fast, mobile-friendly site, and you see a free working preview before you pay.",
+      `Lehesepp builds websites for small businesses in Estonia from ${from}: texts, photos and design included, ready in 1–2 weeks. You pay only when you like the site.`,
     ogAlt: "Lehesepp: websites for businesses in Estonia",
   },
   nav: {
@@ -23,7 +26,7 @@ export const en: Dictionary = {
   hero: {
     title: "A website for your business",
     from: "from",
-    sub: "We build websites for businesses in every field, small and large. You see a preview first, and only then do you decide.",
+    sub: "Lehesepp builds websites for small businesses in Estonia. Texts, photos and design are included, and the site is ready in 1–2 weeks. You see a preview first, and only then do you decide.",
     cta: "See prices",
     secondary: "See examples",
     points: ["Ready in 1–2 weeks", "You pay only when you like the site"],
@@ -121,6 +124,26 @@ export const en: Dictionary = {
     title: "Frequently asked questions",
     items: [
       {
+        q: "How much does a website cost?",
+        a: `The Basic package starts at ${from}. It includes up to 5 pages, a contact form, a photo gallery, a map, social media links, a logo and visual style, and the texts and photos. The Pro price depends on what you need, for example a booking system or the number of languages. The quote is free.`,
+      },
+      {
+        q: "What is the difference between Basic and Pro?",
+        a: "Basic is right when the website should present your business and bring in enquiries. You need Pro when customers should book a time themselves or the site needs several languages. Pro also includes website care. Technical features such as a booking system are only in Pro.",
+      },
+      {
+        q: "Do I have to pay up front?",
+        a: "No. We build the website and send you a preview link. You get the invoice only when you like the site and it goes live.",
+      },
+      {
+        q: "Do you build online shops?",
+        a: "No. We build business websites that present your services and bring in enquiries. We do not build online shops where customers buy and pay for products.",
+      },
+      {
+        q: "Do you work with businesses all over Estonia?",
+        a: "Yes. We build websites for businesses anywhere in Estonia. The first chat can be on the phone and we send the preview as a link, so meeting in person is not required.",
+      },
+      {
         q: "How much time does it take?",
         a: "Usually 1–2 weeks from our first chat to the moment your website is online for everyone to see.",
       },
@@ -138,7 +161,7 @@ export const en: Dictionary = {
       },
       {
         q: "What are a domain and hosting?",
-        a: "The domain is your website's address, for example kohvikmoisa.ee. Hosting is the place where your website lives on the internet, so people can open it at any time. Both cost a small yearly fee. We help you choose them and set everything up for you.",
+        a: "The domain is your website's address, for example kohvikmoisa.ee. Hosting is the place where your website lives on the internet, so people can open it at any time. Both cost a small yearly fee that is not part of the package price. We help you choose them and set everything up for you.",
       },
     ],
   },
@@ -173,7 +196,7 @@ export const en: Dictionary = {
     },
   },
   footer: {
-    tagline: "Websites for businesses in Estonia.",
+    tagline: "Websites for small businesses in Estonia.",
     industries: "Industries",
     privacy: "Privacy policy",
     rights: "All rights reserved.",
