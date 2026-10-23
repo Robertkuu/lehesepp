@@ -9,7 +9,6 @@ export function Samples({ dict }: { dict: Dictionary }) {
       <h2 id="naidised-title" className="font-display text-[clamp(2.25rem,6vw,4rem)] font-extrabold leading-[0.95] tracking-[-0.035em] text-balance">
         {s.title}
       </h2>
-      <p className="mt-5 max-w-[50ch] text-lg leading-relaxed text-ink-2 sm:text-xl text-pretty">{s.sub}</p>
       <ul className="mt-12 grid gap-10 lg:grid-cols-2 lg:gap-8">
         {s.work.map((w) => (
           <li key={w.url}>

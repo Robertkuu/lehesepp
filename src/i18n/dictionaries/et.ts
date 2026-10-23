@@ -60,19 +60,18 @@ export const et = {
   },
   samples: {
     title: "Tehtud tööd",
-    sub: "Paar lehte, mille oleme viimasel ajal teinud.",
     work: [
       {
         name: "Silver Rehvid",
         url: "https://silverrehvid.ee",
         img: "/work/silverrehvid.jpg",
-        text: "Rehvitöökoda Viimsis. Avalehelt näeb kohe, palju rehvivahetus maksab, ja töökotta saab helistada ühe vajutusega. Leht on eesti ja inglise keeles, hindu muudab omanik ise.",
+        text: "Rehvitöökoda Viimsis. Avalehelt näeb kohe, palju rehvivahetus maksab, ja töökotta saab helistada ühe vajutusega. Leht on eesti ja inglise keeles.",
       },
       {
         name: "Plushy",
         url: "https://plushy.ee",
         img: "/work/plushy.jpg",
-        text: "Gua Sha kivide ja peapaelte e-pood. Andsime poele uue näo ja tegime ostmise lihtsamaks: toote saab korvi otse avalehelt ja telefonis on ostunupp kogu aeg näha. Ka pakiautomaadi valik ei jää enam vahele.",
+        text: "Gua Sha kivide ja peapaelte e-pood. Andsime poele uue näo ja tegime ostmise lihtsamaks: toote saab korvi otse avalehelt ja telefonis on ostunupp kogu aeg näha.",
       },
     ],
   },
@@ -97,7 +96,7 @@ export const et = {
       },
       {
         q: "Kas hiljem saab veebilehte muuta?",
-        a: "Jah. Kirjutage või helistage ja teeme muudatuse ära.",
+        a: "Jah, ja seda saate teha ise. Lehel on lihtne halduskeskkond, kus saate tekste, hindu ja pilte muuta ilma programmeerimiseta. Kui ei soovi ise teha, helistage ja teeme selle ära.",
       },
       {
         // TODO: confirm domain + hosting are billed separately and add the typical yearly cost.

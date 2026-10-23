@@ -58,19 +58,18 @@ export const en: Dictionary = {
   },
   samples: {
     title: "Our work",
-    sub: "A few sites we have built.",
     work: [
       {
         name: "Silver Rehvid",
         url: "https://silverrehvid.ee",
         img: "/work/silverrehvid.jpg",
-        text: "Tyre workshop in Viimsi. Customers see the price for their wheel size on the home page and call with one tap. The site is in Estonian and English, and the owner updates prices on their own.",
+        text: "Tyre workshop in Viimsi. Customers see the price for their wheel size on the home page and call with one tap. The site is in Estonian and English.",
       },
       {
         name: "Plushy",
         url: "https://plushy.ee",
         img: "/work/plushy.jpg",
-        text: "Online shop for Gua Sha stones and headbands. A new look and a faster purchase: add to cart straight from the home page, with the buy button always in reach on mobile. The parcel locker step is no longer skipped.",
+        text: "Online shop for Gua Sha stones and headbands. A new look and a faster purchase: add to cart straight from the home page, with the buy button always in reach on mobile.",
       },
     ],
   },
@@ -95,7 +94,7 @@ export const en: Dictionary = {
       },
       {
         q: "Can the website be changed later?",
-        a: "Yes. Email or call us and we make the change for you.",
+        a: "Yes, and you can do it yourself. The site comes with a simple editor where you change texts, prices and photos without any coding. If you would rather not, call us and we will do it.",
       },
       {
         // TODO: confirm domain + hosting are billed separately and add the typical yearly cost.
