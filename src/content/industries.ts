@@ -1,13 +1,10 @@
 // Estonian landing pages per industry, at lehesepp.ee/<slug>. Written for search: each page
 // targets "kodulehe tegemine <valdkonnale>". Estonian only; the English site has no counterpart.
 //
-// To add one, copy an entry. `demo` picks the sample site shown on the page.
-
-import type { DemoTypeKey } from "@/i18n/dictionaries/et";
+// To add one, copy an entry.
 
 export type Industry = {
   slug: string;
-  demo: DemoTypeKey;
   /** Short name for link lists. */
   label: string;
   /** <title> before " | Lehesepp". */
@@ -21,7 +18,6 @@ export type Industry = {
 export const industries: Industry[] = [
   {
     slug: "kodulehe-tegemine-kohvikule",
-    demo: "cafe",
     label: "Kohvikud ja restoranid",
     metaTitle: "Kodulehe tegemine kohvikule ja restoranile",
     metaDescription:
@@ -39,7 +35,7 @@ export const industries: Industry[] = [
       },
       {
         title: "Lauabroneering",
-        body: "Broneerimisnupp viib teie olemasolevasse broneerimissüsteemi või alustab kõnet. Kui süsteemi ei ole, lisame lihtsa broneerimisvormi.",
+        body: "Broneerimisnupp viib Teie olemasolevasse broneerimissüsteemi või alustab kõnet. Kui süsteemi ei ole, lisame lihtsa broneerimisvormi.",
       },
       {
         title: "Fotod, mis tekitavad isu",
@@ -49,7 +45,6 @@ export const industries: Industry[] = [
   },
   {
     slug: "kodulehe-tegemine-ilusalongile",
-    demo: "salon",
     label: "Ilusalongid ja juuksurid",
     metaTitle: "Kodulehe tegemine ilusalongile ja juuksurile",
     metaDescription:
@@ -63,11 +58,11 @@ export const industries: Industry[] = [
       },
       {
         title: "Aja broneerimine",
-        body: "Broneerimisnupp on alati käepärast ja viib teie kasutatavasse broneerimissüsteemi, näiteks Freshasse või Booksysse.",
+        body: "Broneerimisnupp on alati käepärast ja viib Teie kasutatavasse broneerimissüsteemi, näiteks Freshasse või Booksysse.",
       },
       {
         title: "Tööde galerii",
-        body: "Tööde näited ja võrdlusfotod enne ja pärast näitavad teie käekirja paremini kui ükski tekst.",
+        body: "Tööde näited ja võrdlusfotod enne ja pärast näitavad Teie käekirja paremini kui ükski tekst.",
       },
       {
         title: "Meistrite tutvustus",
@@ -77,7 +72,6 @@ export const industries: Industry[] = [
   },
   {
     slug: "kodulehe-tegemine-autoremondile",
-    demo: "auto",
     label: "Autoremont ja rehvitööd",
     metaTitle: "Kodulehe tegemine autoremondile ja rehvitöökojale",
     metaDescription:
@@ -105,7 +99,6 @@ export const industries: Industry[] = [
   },
   {
     slug: "kodulehe-tegemine-ehitusettevottele",
-    demo: "build",
     label: "Ehitus ja remont",
     metaTitle: "Kodulehe tegemine ehitusettevõttele",
     metaDescription:
@@ -127,7 +120,7 @@ export const industries: Industry[] = [
       },
       {
         title: "Tööpiirkond",
-        body: "Lehel on selgelt kirjas, kus te töötate, nii et päringud tulevad piirkonnast, kus teil on mugav töid teha.",
+        body: "Lehel on selgelt kirjas, kus Te töötate, nii et päringud tulevad piirkonnast, kus Teil on mugav töid teha.",
       },
     ],
   },

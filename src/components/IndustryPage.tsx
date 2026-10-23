@@ -1,13 +1,13 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
-import { ArrowDownIcon, ArrowRightIcon, CheckIcon } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRightIcon, CheckIcon } from "@phosphor-icons/react/dist/ssr";
 import { getDictionary } from "@/i18n";
 import { absoluteUrl, routes, siteUrl } from "@/i18n/config";
 import { industries, industryPath, type Industry } from "@/content/industries";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ButtonLink } from "@/components/ui/Button";
-import { DraftFrame } from "@/components/hero/DraftFrame";
+import { WorkShowcase } from "@/components/hero/WorkShowcase";
 import { InView } from "@/components/motion/InView";
 import { Pricing } from "@/components/sections/Pricing";
 import { Process } from "@/components/sections/Process";
@@ -71,18 +71,17 @@ export function IndustryPage({ industry }: { industry: Industry }) {
                 {dict.hero.from} {formatPrice(fromPrice)} · {dict.pricing.payLater}
               </p>
               <div className="flex flex-wrap gap-3">
-                <ButtonLink href="#hinnad">
+                <ButtonLink href="#kontakt">
                   {dict.hero.cta}
-                  <ArrowDownIcon size={18} weight="bold" aria-hidden="true" />
-                </ButtonLink>
-                <ButtonLink href="#kontakt" variant="secondary">
-                  {dict.nav.cta}
                   <ArrowRightIcon size={18} weight="bold" aria-hidden="true" />
+                </ButtonLink>
+                <ButtonLink href="#hinnad" variant="secondary">
+                  {dict.hero.secondary}
                 </ButtonLink>
               </div>
             </div>
             <div>
-              <DraftFrame demo={dict.hero.demo} initialType={industry.demo} />
+              <WorkShowcase dict={dict} href={`${routes.home.et}#naidised`} />
             </div>
           </div>
         </section>

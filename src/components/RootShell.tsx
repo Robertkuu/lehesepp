@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import type { Viewport } from "next";
 import Script from "next/script";
 import { bricolage, schibsted } from "@/app/fonts";
-import { sampleFontVars } from "@/components/samples/fonts";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import { ConsentBanner } from "@/components/ConsentBanner";
 import { getDictionary } from "@/i18n";
@@ -19,7 +18,7 @@ export const viewport: Viewport = {
 
 export function RootShell({ locale, children }: { locale: Locale; children: ReactNode }) {
   return (
-    <html lang={locale} className={`${bricolage.variable} ${schibsted.variable} ${sampleFontVars}`}>
+    <html lang={locale} className={`${bricolage.variable} ${schibsted.variable}`}>
       <body className="min-h-dvh">
         <MotionProvider>{children}</MotionProvider>
         <ConsentBanner t={getDictionary(locale).consent} privacyHref={routes.privacy[locale]} />

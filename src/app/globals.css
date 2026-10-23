@@ -135,43 +135,6 @@ html {
   scrollbar-color: var(--line-strong) var(--paper);
 }
 
-/* First load: every block starts as a wireframe, then gets filled in. */
-@media (prefers-reduced-motion: no-preference) {
-  .draft-block {
-    position: relative;
-    animation: draft-ink 520ms var(--ease-out) both;
-    animation-delay: calc(500ms + var(--i, 0) * 110ms);
-  }
-  .draft-block::after {
-    content: "";
-    position: absolute;
-    inset: -3px;
-    border: 1px dashed var(--s-muted);
-    border-radius: 4px;
-    background: var(--s-bg);
-    pointer-events: none;
-    animation: draft-lift 520ms var(--ease-out) both;
-    animation-delay: calc(500ms + var(--i, 0) * 110ms);
-  }
-}
-@keyframes draft-ink {
-  from {
-    opacity: 0.35;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes draft-lift {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
 /* ---------- Services index: rules draw in, text follows ---------- */
 .index-rule {
   position: absolute;

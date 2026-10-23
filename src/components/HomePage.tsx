@@ -19,9 +19,9 @@ export function HomePage({ locale }: { locale: Locale }) {
       <Header locale={locale} dict={dict} />
       <main id="sisu">
         <Hero dict={dict} />
-        <Process dict={dict} />
         <Pricing dict={dict} locale={locale} />
         <Samples dict={dict} />
+        <Process dict={dict} />
         <Faq dict={dict} />
         <Contact dict={dict} locale={locale} />
       </main>

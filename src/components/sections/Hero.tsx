@@ -1,7 +1,7 @@
-import { ArrowDownIcon, CheckIcon } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRightIcon, CheckIcon } from "@phosphor-icons/react/dist/ssr";
 import type { Dictionary } from "@/i18n";
 import { ButtonLink } from "@/components/ui/Button";
-import { DraftFrame } from "@/components/hero/DraftFrame";
+import { WorkShowcase } from "@/components/hero/WorkShowcase";
 import { formatPrice, fromPrice } from "@/content/pricing";
 
 export function Hero({ dict }: { dict: Dictionary }) {
@@ -18,11 +18,11 @@ export function Hero({ dict }: { dict: Dictionary }) {
           </h1>
           <p className="max-w-[38ch] text-lg leading-relaxed text-ink-2 sm:text-xl text-pretty">{h.sub}</p>
           <div className="flex flex-wrap gap-3">
-            <ButtonLink href="#hinnad">
+            <ButtonLink href="#kontakt">
               {h.cta}
-              <ArrowDownIcon size={18} weight="bold" aria-hidden="true" />
+              <ArrowRightIcon size={18} weight="bold" aria-hidden="true" />
             </ButtonLink>
-            <ButtonLink href="#naidised" variant="secondary">
+            <ButtonLink href="#hinnad" variant="secondary">
               {h.secondary}
             </ButtonLink>
           </div>
@@ -35,7 +35,7 @@ export function Hero({ dict }: { dict: Dictionary }) {
             ))}
           </ul>
         </div>
-        <DraftFrame demo={h.demo} />
+        <WorkShowcase dict={dict} />
       </div>
     </section>
   );

@@ -35,7 +35,7 @@ export const packages: Record<Locale, Record<PackageKey, PackageText>> = {
   et: {
     basic: {
       name: "Põhipakett",
-      description: "Kõik, mida ettevõte kodulehelt vajab, et kliendid Teid leiaksid ja ühendust võtaksid.",
+      description: "Kõik, mida väike ettevõte kodulehelt vajab, et kliendid Teid üles leiaksid ja ühendust võtaksid.",
       priceLabel: "alates",
       badge: "Enim valitud",
       features: [
@@ -54,7 +54,7 @@ export const packages: Record<Locale, Record<PackageKey, PackageText>> = {
     pro: {
       name: "Pro",
       description: "Kui kliendid peavad saama ise aega broneerida või leht peab olema mitmes keeles.",
-      priceLabel: "Hind sõltub vajadustest",
+      priceLabel: "Hind oleneb vajadusest",
       features: [
         "Kõik, mis on Põhipaketis",
         "Broneerimissüsteem: kliendid broneerivad aja ise",
