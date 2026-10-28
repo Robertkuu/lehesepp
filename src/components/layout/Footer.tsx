@@ -3,18 +3,15 @@ import type { Dictionary } from "@/i18n";
 import { routes, otherLocale, type Locale, type RouteKey } from "@/i18n/config";
 import { ConsentSettingsLink } from "@/components/ConsentBanner";
 import { site, emailUrl, phoneUrl } from "@/lib/site";
-import { industries, industryPath } from "@/content/industries";
 
 /** route: the page's key in `routes`, or null for a page without a translation. */
 export function Footer({ dict, locale, route = "home" }: { dict: Dictionary; locale: Locale; route?: RouteKey | null }) {
   const f = dict.footer;
   const other = otherLocale(locale);
   const year = 2026;
-  // Industry pages exist in Estonian only.
-  const showIndustries = locale === "et";
   return (
     <footer className="overflow-hidden border-t border-line">
-      <div className={`mx-auto grid max-w-[1400px] gap-10 px-4 pb-6 pt-14 sm:grid-cols-2 sm:px-6 lg:px-10 ${showIndustries ? "lg:grid-cols-5" : "lg:grid-cols-4"}`}>
+      <div className="mx-auto grid max-w-[1400px] gap-10 px-4 pb-6 pt-14 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-10">
         <div className="grid content-start gap-2">
           <p className="font-display text-xl font-bold tracking-[-0.02em]">{site.name}</p>
           <p className="text-sm text-ink-2">{f.tagline}</p>
@@ -28,16 +25,6 @@ export function Footer({ dict, locale, route = "home" }: { dict: Dictionary; loc
             {site.phoneDisplay}
           </a>
         </div>
-        {showIndustries && (
-          <div className="grid content-start gap-2 text-sm">
-            <p className="font-semibold">{f.industries}</p>
-            {industries.map((i) => (
-              <Link key={i.slug} href={industryPath(i.slug)} className="w-fit text-ink-2 transition-colors hover:text-ink">
-                {i.label}
-              </Link>
-            ))}
-          </div>
-        )}
         <div className="grid content-start gap-2 text-sm">
           <Link href={routes.privacy[locale]} className="w-fit text-ink-2 transition-colors hover:text-ink">
             {f.privacy}

@@ -137,7 +137,6 @@ export const et = {
   },
   footer: {
     tagline: "Kodulehed Eesti väikeettevõtetele.",
-    industries: "Valdkonnad",
     privacy: "Privaatsuspoliitika",
     rights: "Kõik õigused kaitstud.",
     contact: "Kontakt",

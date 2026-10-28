@@ -135,7 +135,6 @@ export const en: Dictionary = {
   },
   footer: {
     tagline: "Websites for small businesses in Estonia.",
-    industries: "Industries",
     privacy: "Privacy policy",
     rights: "All rights reserved.",
     contact: "Contact",
