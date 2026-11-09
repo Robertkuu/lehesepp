@@ -8,6 +8,9 @@ export const site = {
   // (Facebook, LinkedIn, Teatmik/Inforegister) for sameAs. Left out until confirmed.
   sameAs: [] as string[],
   email: "robert@lehesepp.ee",
+  // Second contact, shown next to `email` in the contact section and footer only.
+  // Privacy policy and structured data keep `email` (the data controller).
+  email2: "henri@lehesepp.ee",
   // International format, no spaces.
   phone: "+37258557713",
   phoneDisplay: "+372 5855 7713",

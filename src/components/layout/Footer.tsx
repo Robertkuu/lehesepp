@@ -21,6 +21,9 @@ export function Footer({ dict, locale, route = "home" }: { dict: Dictionary; loc
           <a href={emailUrl} className="w-fit text-ink-2 transition-colors hover:text-ink">
             {site.email}
           </a>
+          <a href={`mailto:${site.email2}`} className="w-fit text-ink-2 transition-colors hover:text-ink">
+            {site.email2}
+          </a>
           <a href={phoneUrl} className="w-fit text-ink-2 tabular-nums transition-colors hover:text-ink">
             {site.phoneDisplay}
           </a>

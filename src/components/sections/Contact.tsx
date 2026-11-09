@@ -8,6 +8,7 @@ export function Contact({ dict, locale }: { dict: Dictionary; locale: Locale }) 
   const c = dict.contact;
   const direct = [
     { href: emailUrl, label: c.email, value: site.email, Icon: EnvelopeSimpleIcon },
+    { href: `mailto:${site.email2}`, label: c.email, value: site.email2, Icon: EnvelopeSimpleIcon },
     { href: phoneUrl, label: c.phone, value: site.phoneDisplay, Icon: PhoneIcon },
     { href: whatsappUrl, label: c.whatsapp, value: site.phoneDisplay, Icon: WhatsappLogoIcon, external: true },
   ];
@@ -29,7 +30,7 @@ export function Contact({ dict, locale }: { dict: Dictionary; locale: Locale }) 
             <h3 className="text-sm font-medium text-ink-2">{c.direct}</h3>
             <ul className="mt-3 border-t border-line-strong">
               {direct.map(({ href, label, value, Icon, external }) => (
-                <li key={label} className="border-b border-line-strong">
+                <li key={href} className="border-b border-line-strong">
                   <a
                     href={href}
                     {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
