@@ -10,6 +10,8 @@ import { Footer } from "@/components/layout/Footer";
 function fill(text: string) {
   return text
     .replaceAll("{founder}", site.founder)
+    .replaceAll("{company}", site.company.name)
+    .replaceAll("{regCode}", site.company.regCode)
     .replaceAll("{name}", site.name)
     .replaceAll("{email}", site.email);
 }

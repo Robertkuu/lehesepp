@@ -48,7 +48,7 @@ export function Footer({ dict, locale, route = "home" }: { dict: Dictionary; loc
       </div>
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
         <p className="border-t border-line py-5 text-xs text-ink-2">
-          © {year} {site.name}. {f.rights}
+          © {year} {site.name}. {f.rights} {site.company.name}, {f.regCode} {site.company.regCode}.
         </p>
         <div className="@container">
           <p aria-hidden="true" className="footer-mark select-none whitespace-nowrap font-display font-extrabold text-leaf">

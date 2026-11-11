@@ -137,6 +137,7 @@ export const en: Dictionary = {
     tagline: "Websites for small businesses in Estonia.",
     privacy: "Privacy policy",
     rights: "All rights reserved.",
+    regCode: "reg. code",
     contact: "Contact",
     language: "Language",
     cookies: "Cookie settings",
@@ -157,7 +158,7 @@ export const en: Dictionary = {
       {
         h: "Data controller",
         p: [
-          "The controller of personal data is Robert Kuura ({name}). For questions about data protection, write to {email}.",
+          "The controller of personal data is {company} (registry code {regCode}), owner of {name}. For questions about data protection, write to {email}.",
         ],
       },
       {

@@ -2,11 +2,12 @@
 
 export const site = {
   name: "Lehesepp",
-  // Same name as the data controller in the privacy policy, so every source names one person.
+  // Founder shown in structured data and llms.txt.
   founder: "Robert Kuura",
-  // TODO: legal form and registry code (FIE or OÜ), city/region, and public profiles
-  // (Facebook, LinkedIn, Teatmik/Inforegister) for sameAs. Left out until confirmed.
-  sameAs: [] as string[],
+  // Legal entity that owns Lehesepp (Estonian Business Register). Also the data controller.
+  company: { name: "ORANGUTAN INVESTEERINGUD OÜ", regCode: "14697200" },
+  // TODO: city/region and public profiles (Facebook, LinkedIn) for sameAs.
+  sameAs: ["https://www.inforegister.ee/14697200-ORANGUTAN-INVESTEERINGUD-OU/"] as string[],
   email: "robert@lehesepp.ee",
   // Second contact, shown next to `email` in the contact section and footer only.
   // Privacy policy and structured data keep `email` (the data controller).

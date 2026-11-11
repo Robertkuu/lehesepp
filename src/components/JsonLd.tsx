@@ -14,6 +14,8 @@ export function JsonLd({ locale }: { locale: Locale }) {
         "@type": ["Organization", "ProfessionalService"],
         "@id": business,
         name: site.name,
+        legalName: site.company.name,
+        identifier: { "@type": "PropertyValue", propertyID: "Äriregistri kood", value: site.company.regCode },
         description: dict.meta.description,
         url,
         email: site.email,

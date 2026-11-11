@@ -139,6 +139,7 @@ export const et = {
     tagline: "Kodulehed Eesti väikeettevõtetele.",
     privacy: "Privaatsuspoliitika",
     rights: "Kõik õigused kaitstud.",
+    regCode: "registrikood",
     contact: "Kontakt",
     language: "Keel",
     cookies: "Küpsiste seaded",
@@ -159,7 +160,7 @@ export const et = {
       {
         h: "Vastutav töötleja",
         p: [
-          "Isikuandmete vastutav töötleja on Robert Kuura ({name}). Andmekaitsega seotud küsimustes kirjutage aadressile {email}.",
+          "Isikuandmete vastutav töötleja on {company} (registrikood {regCode}), {name} omanik. Andmekaitsega seotud küsimustes kirjutage aadressile {email}.",
         ],
       },
       {
