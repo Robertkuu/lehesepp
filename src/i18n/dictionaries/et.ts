@@ -73,6 +73,12 @@ export const et = {
         img: "/work/plushy.jpg",
         text: "Gua Sha kivide ja peapaelte e-pood. Andsime poele uue näo ja tegime ostmise lihtsamaks: toote saab korvi otse avalehelt ja telefonis on ostunupp kogu aeg näha.",
       },
+      {
+        name: "Harrison Car Detailing",
+        url: "https://harrison.lehesepp.ee",
+        img: "/work/harrison.jpg",
+        text: "Autopesu ja poleerimine Peetris. Lehelt näeb iga teenuse algushinda ja tehtud tööde enne-pärast pilte ning aja broneerimiseks saab helistada ühe vajutusega. Leht on eesti ja inglise keeles.",
+      },
     ],
   },
   faq: {

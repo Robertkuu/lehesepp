@@ -71,6 +71,12 @@ export const en: Dictionary = {
         img: "/work/plushy.jpg",
         text: "Online shop for Gua Sha stones and headbands. A new look and a faster purchase: add to cart straight from the home page, with the buy button always in reach on mobile.",
       },
+      {
+        name: "Harrison Car Detailing",
+        url: "https://harrison.lehesepp.ee",
+        img: "/work/harrison.jpg",
+        text: "Car wash and detailing in Peetri. Customers see a starting price for every service and before-and-after photos of real jobs, and can call to book with one tap. The site is in Estonian and English.",
+      },
     ],
   },
   faq: {
